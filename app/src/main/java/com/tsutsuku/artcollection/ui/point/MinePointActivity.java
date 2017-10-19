@@ -16,6 +16,7 @@ import com.tsutsuku.artcollection.ui.exchange.ExchangeCoinActivity;
 import com.tsutsuku.artcollection.ui.mine.IntegrationDetailActivity;
 import com.tsutsuku.artcollection.utils.GsonUtils;
 import com.tsutsuku.artcollection.utils.SharedPref;
+import com.tsutsuku.artcollection.utils.ToastUtils;
 
 import org.json.JSONObject;
 
@@ -39,10 +40,6 @@ public class MinePointActivity extends BaseActivity {
     @BindView(R.id.flExchange)
     FrameLayout flExchange;
 
-    @BindView(R.id.exchange_coinsTv)
-    TextView mExchangeCoinTv;
-    @BindView(R.id.purchase_offsetTv)
-    TextView mPurchaseOffsetTv;
 
     private List<CountInfoBean> mList = new ArrayList<>();
 
@@ -60,7 +57,7 @@ public class MinePointActivity extends BaseActivity {
 
     @Override
     public void initViews() {
-        initTitle(R.string.mine_point,R.string.mine_details);
+        initTitle(R.string.mine_point, R.string.mine_details);
         ButterKnife.bind(this);
 
     }
@@ -77,9 +74,7 @@ public class MinePointActivity extends BaseActivity {
     }
 
     /**
-     *
      * 请求积分数据
-     *
      **/
     private void getIntegrationData() {
         HashMap<String, String> hashMap = new HashMap<>();
@@ -117,19 +112,18 @@ public class MinePointActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.exchange_coinsTv,R.id.purchase_offsetTv,R.id.tvTitleButton})
+    @OnClick({R.id.exchange_coinsTv, R.id.purchase_offsetTv, R.id.tvTitleButton})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.exchange_coinsTv:
                 Intent intent = new Intent(this, ExchangeCoinActivity.class);
-                intent.putExtra("CountInfo.data",mInfoBean.getIntegrateTotal());
                 startActivity(intent);
                 break;
             case R.id.purchase_offsetTv:
-                startActivity(new Intent(this, ExchangeCoinActivity.class));
+                ToastUtils.showMessage("该功能尚未开通!");
                 break;
             case R.id.tvTitleButton:
-                startActivity(new Intent(this,IntegrationDetailActivity.class));
+                startActivity(new Intent(this, IntegrationDetailActivity.class));
                 break;
             default:
                 break;
