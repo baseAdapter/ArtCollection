@@ -1,0 +1,106 @@
+<resources>
+    <string name="app_name">艺术收藏网</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="agree_name">《艺术品收藏网网络服务协议》</string>
+    <string name="cate">分类</string>
+
+    /** Mine Message **/
+    <string name="mine_message">我的消息</string>
+    <string name="im_image">[图片]</string>
+    <string name="im_voice">[语音]</string>
+
+    ／** Circle **／
+    <string name="treasure">分享</string>
+    <string name="identify">鉴定</string>
+    <string name="find">发现</string>
+    <string name="title">标题</string>
+    <string name="description">描述</string>
+    <string name="description_blank">限200字</string>
+    <string name="publish_type">帖子类型</string>
+    <string name="identify_paid">有偿鉴定</string>
+    <string name="identify_free">无偿鉴定</string>
+    <string name="type">类型</string>
+    <string name="required">必选</string>
+    <string name="select_appraiser">选择鉴定师</string>
+    <string name="identify_agree_name">《艺术品收藏网网络鉴定服务协议》</string>
+    <string name="title_blank">请输入标题为空</string>
+    <string name="type_blank">请选择类别</string>
+    <string name="expert_id_blank">请选择鉴定师</string>
+    <string name="please_read_identify_and_agree">请阅读并同意鉴定服务协议</string>
+    <string name="comment">评论</string>
+    <string name="year">年代</string>
+    <string name="collection_value">收藏价值</string>
+    <string name="identify_content">意见参考</string>
+    <string name="year_hint">请输入年代</string>
+    <string name="value_hint">请输入收藏价值</string>
+    <string name="content_hint">请输入意见参考</string>
+    <string name="export">鉴定专家</string>
+
+    /** Mine **/
+    <string name="mine_auction">我的拍卖</string>
+    <string name="mine_treasure">我的宝贝</string>
+    <string name="mine_identify">我的鉴定</string>
+    <string name="mine_collection">我的收藏</string>
+    <string name="mine_apply">开店申请</string>
+    <string name="mine_identify_apply">鉴定师申请</string>
+    <string name="mine_art_apply">艺术经纪人申请</string>
+    <string name="mine_activities">活动报名</string>
+    <string name="login_password">登陆密码</string>
+    <string name="change">修改</string>
+    <string name="invite_friends">邀请好友</string>
+
+    /** vendor apply */
+    <string name="person_apply">个人申请</string>
+    <string name="enterprise_apply">企业申请</string>
+    <string name="person_name">姓名</string>
+    <string name="person_name_hint">请输入真实姓名</string>
+    <string name="person_code">身份证</string>
+    <string name="person_code_hint">请输入身份证号</string>
+    <string name="phone">电话</string>
+    <string name="phone_hint">请输入手机号</string>
+    <string name="address">地址</string>
+    <string name="address_hint">请输入常用地址</string>
+    <string name="person_pic">请上传您的身份证正反照</string>
+
+    <string name="enterprise_name">公司名称</string>
+    <string name="enterprise_name_hint">请输入公司名称</string>
+    <string name="enterprise_code">营业执照注册号</string>
+    <string name="enterprise_code_hint">请输入营业执照注册号</string>
+    <string name="enterprise_pic">请上传您的营业执照正反面</string>
+    <string name="submit_apply">提交申请</string>
+
+    /** Product **/
+    <string name="cur_price">当前价</string>
+    <string name="bid">出价</string>
+    <string name="auction_data">拍卖纪录</string>
+    <string name="start_price">起拍价</string>
+    <string name="step_price">加价幅度</string>
+    <string name="delay_time">延时周期</string>
+    <string name="auction_fee">拍卖佣金</string>
+    <string name="vendor_buy_tab">购买承诺</string>
+    <string name="vendor_authentication_tab">认证商家</string>
+    <string name="vendor_guarantee_tab">正品保证</string>
+    <string name="bid_price">出价金额</string>
+    <string name="vendor_title">商家</string>
+    <string name="sales">销量</string>
+    <string name="praise">好评</string>
+    <string name="auction">拍卖</string>
+    <string name="pay_deposit">提交保证金</string>
+    <string name="deposit">保证金</string>
+    <string name="agree_auction">《艺术品收藏网网络竞拍服务协议》</string>
+
+    /** lesson **/
+    <string name="menu_change">切换栏目</string>
+    <string name="menu_long_click">长按排序或删除</string>
+    <string name="menu_add">点击添加更多栏目</string>
+    <string name="menu_finish">完成</string>
+    <string name="menu_drag">拖动排序</string>
+
+    /** activity **/
+    <string name="open_live">打开直播</string>
+
+    /** Recharge **/
+    <string name="agree_recharge">《充值和提现协议》</string>
+    <string name="agree_jiangdi">签定协议</string>
+</resources>

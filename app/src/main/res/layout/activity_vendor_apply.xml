@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/base_title" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:paddingLeft="20dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/c15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical" />
+
+        <EditText
+            android:id="@+id/etName"
+            style="@style/i15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="70dp"
+            android:background="@color/transparent"
+            android:gravity="center_vertical" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:background="@color/divider" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:paddingLeft="20dp">
+
+        <TextView
+            android:id="@+id/tvCode"
+            style="@style/c15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical" />
+
+        <EditText
+            android:id="@+id/etCode"
+            style="@style/i15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="70dp"
+            android:background="@color/transparent"
+            android:gravity="center_vertical" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:background="@color/divider" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:paddingLeft="20dp">
+
+        <TextView
+            style="@style/c15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/phone" />
+
+        <EditText
+            android:id="@+id/etMobile"
+            style="@style/i15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="70dp"
+            android:background="@color/transparent"
+            android:gravity="center_vertical"
+            android:hint="@string/phone_hint" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:background="@color/divider" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:paddingLeft="20dp">
+
+        <TextView
+            style="@style/c15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/address" />
+
+        <EditText
+            android:id="@+id/etAddress"
+            style="@style/i15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="70dp"
+            android:background="@color/transparent"
+            android:gravity="center_vertical"
+            android:hint="@string/address_hint" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tvHint"
+            style="@style/e15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp" />
+
+        <ImageView
+            android:id="@+id/ivPicOne"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/icon_add_picture"
+            android:scaleType="centerCrop"
+            android:layout_width="65dp"
+            android:layout_height="65dp" />
+
+        <ImageView
+            android:id="@+id/ivPicTwo"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/icon_add_picture"
+            android:scaleType="centerCrop"
+            android:layout_width="65dp"
+            android:layout_height="65dp" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btnCmd"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        style="@style/w15"
+        android:layout_marginTop="15dp"
+        android:text="@string/submit_apply"
+        android:background="@drawable/btn_orange"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+</LinearLayout>

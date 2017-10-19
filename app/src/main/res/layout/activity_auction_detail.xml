@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpBase"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/ablBase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/ctlBase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:statusBarScrim="@color/transparent">
+
+            <com.bigkoo.convenientbanner.ConvenientBanner
+                android:id="@+id/cbBase"
+                android:layout_width="match_parent"
+                android:layout_height="220dp" />
+
+            <FrameLayout
+                android:id="@+id/flStatus"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="190dp"
+                android:background="@color/orange_transparent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/icon_w_clock" />
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    style="@style/w15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="40dp" />
+
+                <TextView
+                    android:id="@+id/tvApplyTime"
+                    style="@style/w15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="110dp" />
+            </FrameLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom" />
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tlBase"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:background="@color/white"
+                app:tabTextAppearance="@style/tabLayoutTextSize" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="220dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:minHeight="70dp"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        style="@style/b16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp" />
+
+                    <TextView
+                        android:id="@+id/tvPrice"
+                        style="@style/o16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvName"
+                        android:layout_marginRight="100dp"
+                        android:layout_marginTop="10dp" />
+
+                    <ImageView
+                        android:id="@+id/ivShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/icon_share_n_xxhdpi" />
+
+                    <ImageView
+                        android:id="@+id/ivCollection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/ivShare"
+                        android:src="@drawable/icon_collect_normal_xxhdpi" />
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:id="@+id/tvOnlookers"
+                        style="@style/d12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp" />
+
+                    <TextView
+                        android:id="@+id/tvOffers"
+                        style="@style/d12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvDeposit"
+                        style="@style/d12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="15dp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/llTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/icon_my_auction" />
+
+                    <TextView
+                        style="@style/c15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="45dp"
+                        android:text="@string/auction_data" />
+
+                    <TextView
+                        android:id="@+id/tvAuctionNum"
+                        style="@style/c15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="120dp" />
+                </FrameLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvAuction"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:background="@color/white" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/start_price" />
+
+                    <TextView
+                        android:id="@+id/tvStartPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginTop="15dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="185dp"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/delay_time" />
+
+                    <TextView
+                        android:id="@+id/tvDelayTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="250dp"
+                        android:layout_marginTop="15dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="45dp"
+                        android:text="@string/step_price" />
+
+                    <TextView
+                        android:id="@+id/tvStepPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginTop="45dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="185dp"
+                        android:layout_marginTop="45dp"
+                        android:text="@string/auction_fee" />
+
+                    <TextView
+                        android:id="@+id/tvAuctionFee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="250dp"
+                        android:layout_marginTop="45dp" />
+
+
+                </FrameLayout>
+
+                <include
+                    layout="@layout/block_merchant_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_marginTop="10dp" />
+
+                <Space
+                    android:layout_width="1px"
+                    android:layout_height="50dp" />
+            </LinearLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/flChat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/icon_chat" />
+
+            <TextView
+                style="@style/c15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/chat_to_merchant" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btnDeposit"
+            style="@style/w15"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/e"
+            android:text="" />
+
+        <FrameLayout
+            android:id="@+id/flBid"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/orange"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/w15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="@string/bid" />
+
+            <TextView
+                android:id="@+id/tvCurPrice"
+                style="@style/w13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp" />
+        </FrameLayout>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

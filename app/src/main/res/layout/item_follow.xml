@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_selector"
+    android:id="@+id/flBase"
+    android:layout_height="80dp">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/ivAvatar"/>
+
+    <TextView
+        style="@style/c15"
+        android:id="@+id/tvName"
+        android:layout_marginLeft="100dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</FrameLayout>

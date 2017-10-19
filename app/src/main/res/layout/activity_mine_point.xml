@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/tv_bg">
+
+    <include layout="@layout/base_title_tv" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/viewBg">
+    </View>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="144dp"
+            android:layout_height="144dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="22dp"
+            android:src="@drawable/icon_mine_point" />
+
+        <TextView
+            android:id="@+id/tvPoint"
+            style="@style/c13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="180dp"
+            android:textSize="28sp"/>
+
+        <FrameLayout
+            android:id="@+id/flExchange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="13dp"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/d13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15dp"
+                android:text="@string/point_exchange" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="13dp"
+                android:layout_gravity="center_vertical|right"
+                android:src="@drawable/icon_right_arrow" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="14dp"
+        android:background="@color/viewBg">
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/button_changecoin"
+            android:layout_marginRight="25dp">
+
+            <ImageView
+                android:id="@+id/icon_cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/icon_changecoin" />
+
+            <TextView
+                android:id="@+id/exchange_coinsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exchange_coins"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/tv_bg"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/button_deduction"
+            android:layout_marginRight="20dp">
+
+            <ImageView
+                android:id="@+id/icon_gift"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/icon_deduction" />
+
+            <TextView
+                android:id="@+id/purchase_offsetTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/purchase_offset"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/tv_bg"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_gravity="bottom">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="积分规则"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:textSize="13sp"
+            android:textColor="@color/c"/>
+    </RelativeLayout>
+
+
+
+</LinearLayout>

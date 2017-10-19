@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="40dp"
+    android:id="@+id/flShare"
+    android:layout_height="45dp">
+
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/icon_b_share"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+    <TextView
+        android:layout_marginTop="25dp"
+        android:text="分享"
+        style="@style/c14"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</FrameLayout>

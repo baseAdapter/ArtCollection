@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tsutsuku.artcollection">
+
+    <!-- Easemob -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- Live 权限声明 -->
+    <!-- 允许程序打开网络套接字 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许程序使用PowerManager WakeLocks以防止处理器休眠或者屏幕锁屏 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 允许程序向外部存储设备写数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许程序向外部存储设备读数据 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 允许程序获取网络相关信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 允许程序获取Wifi网络状态信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 允许程序获得设备信息 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- ShareSdk -->
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <application
+        android:name=".ui.base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.main.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 支付宝 Begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <!-- 支付宝 End -->
+
+
+        <!-- 微信支付 Start -->
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+
+        <!-- 微信支付 End -->
+
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".ui.base.WebActivity" />
+        <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".ui.login.RegisterActivity" />
+        <activity android:name=".ui.login.ResetPasswordActivity" />
+        <activity android:name=".ui.circle.PhotoViewActivity" />
+        <activity
+            android:name=".ui.circle.ShareActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".ui.circleBase.ImageFilesActivity" />
+        <activity android:name=".ui.circleBase.ImagePickerActivity" />
+        <activity
+            android:name=".ui.circle.CircleDetailActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.mine.MineInfoActivity" />
+        <activity android:name=".ui.common.CateSelectActivity" />
+        <activity android:name=".ui.shoppingBase.ShoppingAddressDetailActivity" />
+        <activity android:name=".ui.shoppingBase.ShoppingAddressActivity" />
+        <activity android:name=".ui.product.ProductDetailActivity" />
+        <activity android:name=".ui.shoppingBase.ShoppingCartActivity" />
+        <activity android:name=".ui.shoppingBase.ShoppingSettleActivity" />
+        <activity android:name=".ui.shoppingBase.MineOrdersActivity" />
+        <activity android:name=".ui.wallet.MineWalletActivity" />
+        <activity android:name=".ui.wallet.RechargeActivity" />
+        <activity android:name=".ui.wallet.WithDrawActivity" />
+        <activity android:name=".ui.shoppingBase.OrderCommentActivity" />
+        <activity android:name=".ui.mine.SettingActivity" />
+        <activity android:name=".ui.mine.FeedbackActivity" />
+        <activity android:name=".ui.auction.AuctionDetailActivity" />
+
+        <!-- Easemob IM Start -->
+        <activity
+            android:name=".im.ui.CallActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".im.ui.ChatActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".im.ui.ContextMenuActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyle" />
+        <activity
+            android:name=".im.ui.ForwardMessageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".im.ui.ImageGridActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".im.ui.VideoCallActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".im.ui.VoiceCallActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity"
+            android:screenOrientation="portrait" />
+        <!-- Easemob IM End -->
+
+
+        <!-- Easemob start -->
+        <!-- 设置环信应用的AppKey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="91330108ma27wm1u3r#yssc" />
+        <!-- 声明SDK所需的service SDK核心功能 -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <!-- 声明SDK所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+            ``
+        </receiver>
+        <!-- Easemob end -->
+
+        <activity android:name=".ui.point.MinePointActivity" />
+        <activity android:name=".ui.point.PointListActivity" />
+        <activity android:name=".ui.point.PointDetailActivity" />
+        <activity android:name=".ui.circle.ExportListActivity" />
+        <activity android:name=".ui.shopping.VendorListActivity" />
+        <activity android:name=".ui.shopping.VendorDetailActivity" />
+        <activity android:name=".ui.mine.MineFollowActivity" />
+        <activity android:name=".ui.lesson.LessonActivity" />
+        <activity android:name=".ui.lesson.MenuActivity" />
+        <activity
+            android:name=".ui.lesson.LessonDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.mine.VendorApplyActivity" />
+        <activity android:name=".ui.activity.ActivityListActivity" />
+        <activity android:name=".ui.mine.MineCircleActivity" />
+        <activity android:name=".ui.activity.ActivityDetailActivity" />
+        <activity
+            android:name=".live.player.NEVideoPlayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.shoppingBase.OrderDetailActivity" />
+        <activity android:name=".ui.activity.MineActivitiesActivity" />
+        <activity android:name=".ui.auction.MineAuctionActivity" />
+        <activity android:name=".ui.activity.LiveListActivity" />
+        <activity android:name=".ui.auction.PayDepositActivity" />
+        <activity android:name=".ui.news.NewsListActivity" />
+        <activity android:name=".ui.collection.MineCollectionActivity" />
+        <activity
+            android:name=".live.stream.MediaPreviewActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.mine.MineFansActivity" />
+
+        <!-- ShareSdk start -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
+            <!-- QQ和QQ空间分享 QQ登录的回调必须要配置的 -->
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".ui.main.ProductSearchActivity" />
+        <activity android:name=".ui.search.SearchActivity" />
+        <activity android:name=".ui.mine.ChangePasswordActivity" />
+        <activity android:name=".ui.product.ProductActivity" />
+        <activity android:name=".ui.identify.IdentifyActivity" />
+        <activity android:name=".ui.main.MineMessageActivity" />
+        <activity android:name=".other.custom.ui.CustomDetailActivity" />
+        <activity android:name=".other.custom.ui.CustomListActivity" />
+        <activity android:name=".other.custom.ui.CustomHomeActivity" />
+        <activity android:name=".other.rent.ui.RentDetailActivity" />
+        <activity android:name=".other.pawn.ui.DealerListActivity" />
+        <activity android:name=".other.pawn.ui.PawnHomeActivity" />
+        <activity android:name=".other.pawn.ui.CrowdDetailActivity" />
+        <activity
+            android:name=".other.pawn.ui.PawnPublishActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".other.rent.ui.RentListActivity" />
+        <activity android:name=".other.pawn.ui.CrowdListActivity" />
+        <activity android:name=".ui.shoppingBase.SettleResultActivity" />
+        <activity android:name=".ui.news.NewsDetailActivity" />
+        <activity android:name=".ui.mine.HelpListActivity" />
+        <activity android:name=".ui.mine.InviteActivity" />
+        <activity android:name=".ui.mine.ActivityDetailActivity" />
+        <activity android:name=".ui.mine.ExchangeMallActivity" />
+        <activity android:name=".ui.exchange.CoinDetailActivity" />
+        <activity android:name=".ui.exchange.ExchangeRecordActivity" />
+        <activity android:name=".ui.exchange.ExchangeProductDetailActivity" />
+        <activity android:name=".ui.exchange.ExchangeStateActivity" />
+        <activity android:name=".ui.mine.IntegrationDetailActivity" />
+        <activity android:name=".ui.exchange.ExchangeCoinActivity"></activity>
+        <activity android:name=".ui.exchange.ExchangeSuccessActivity"></activity>
+    </application>
+
+</manifest>

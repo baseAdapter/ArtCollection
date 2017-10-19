@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/white"
+    android:gravity="right|center_vertical"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/btnCancel"
+        style="@style/d14"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box_d"
+        android:text="@string/cancel_order"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        style="@style/d14"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box_d"
+        android:text="@string/delete_order"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnConfirm"
+        style="@style/o14"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box_o"
+        android:text="@string/confirm_goods"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnPay"
+        style="@style/o14"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box_o"
+        android:text="@string/pay_order"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnComment"
+        style="@style/o14"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box_o"
+        android:text="@string/comment_goods"
+        android:visibility="gone" />
+</LinearLayout>

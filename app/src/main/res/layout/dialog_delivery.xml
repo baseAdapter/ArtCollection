@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="400dp">
+
+    <TextView
+        style="@style/c17"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="@string/delivery_type" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvDialog"
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/white" />
+
+    <Button
+        android:id="@+id/btnClose"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:textColor="@color/red"
+        android:textSize="14dp" />
+</FrameLayout>

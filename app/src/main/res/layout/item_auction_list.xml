@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="125dp">
+
+    <ImageView
+        android:id="@+id/ivPic"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp" />
+
+    <TextView
+        android:id="@+id/tvName"
+        style="@style/c14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="15dp"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/tvCurPrice"
+        style="@style/c14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        style="@style/c14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="60dp" />
+
+    <TextView
+        android:id="@+id/tvCount"
+        style="@style/d13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="130dp" />
+
+    <TextView
+        android:id="@id/tvStatus"
+        style="@style/c14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="15dp"
+        android:background="@color/divider" />
+</FrameLayout>

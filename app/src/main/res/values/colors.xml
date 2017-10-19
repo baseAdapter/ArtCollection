@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#00000000</color>
+    <color name="colorAccent">#E8800F</color>
+
+    <color name="bg">#EEEEEE</color>
+
+
+    <color name="orange">#E8800F</color>
+    <color name="orange_transparent">#A0E8800F</color>
+    <color name="red">#F53B04</color>
+    <color name="little_orange">#F0AA60</color>
+
+    <color name="b">#333333</color>
+    <color name="background">#B3B3B3 </color>
+    <color name="rl_bg">#efefef</color>
+    <color name="c">#666666</color>
+    <color name="d">#999999</color>
+    <color name="viewBg">#EFEFF4 </color>
+    <color name="e">#BBBBBB</color>
+    <color name="forget_password">#808080 </color>
+    <color name="view">#E6E6E6 </color>
+
+    <color name="bg_all">#ffffff</color>
+    <color name="tv_bg">#ffffff</color>
+    <color name="tv_invite">#6F3802</color>
+
+
+    <color name="bg_avatar">#5CFFFFFF</color>
+</resources>

@@ -1,0 +1,91 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <com.tsutsuku.artcollection.live.player.NEVideoView
+        android:id="@+id/nvvBase"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:id="@+id/buffering_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:text="@string/buffering"
+            android:textColor="#FFFFFFFF"
+            android:textSize="13dp" />
+
+        <ProgressBar
+            style="@android:style/Widget.ProgressBar.Large"
+            android:layout_width="50dip"
+            android:layout_height="50dip" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/icon_w_back" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvBase"
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="55dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white" />
+
+        <EditText
+            android:id="@+id/etSend"
+            style="@style/i13"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="95dp"
+            android:background="@drawable/btn_live_edit"
+            android:hint="我来说两句"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" />
+
+        <ImageButton
+            android:id="@+id/ibPay"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="15dp"
+            android:background="@color/transparent"
+            android:src="@drawable/icon_live_pay" />
+
+        <ImageButton
+            android:background="@color/transparent"
+            android:id="@+id/ibSend"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="55dp"
+            android:src="@drawable/icon_live_send" />
+    </FrameLayout>
+</FrameLayout>

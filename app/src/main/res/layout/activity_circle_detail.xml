@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpBase"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/ablBase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/ctlBase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:statusBarScrim="@color/transparent">
+
+            <com.bigkoo.convenientbanner.ConvenientBanner
+                android:id="@+id/cbBase"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                app:layout_collapseMode="parallax" />
+
+            <ImageView
+                android:id="@+id/ivCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="140dp"
+                android:src="@drawable/icon_white_check"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="320dp"
+                android:background="@color/white"
+                android:paddingLeft="17dp"
+                android:paddingRight="15dp"
+                app:layout_collapseMode="pin">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    style="@style/b19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvContent"
+                    style="@style/c13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvTitle"
+                    android:layout_marginTop="14dp" />
+
+                <TextView
+                    android:id="@+id/tvType"
+                    style="@style/d13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvContent"
+                    android:layout_marginTop="11dp" />
+
+                <TextView
+                    android:id="@+id/tvCate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvContent"
+                    style="@style/o12"
+                    android:layout_marginTop="12dp"/>
+
+                <ImageView
+                    android:id="@+id/ivPaid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/tvContent"
+                    android:layout_marginRight="55dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/icon_paid"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/tvPaid"
+                    style="@style/o13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/tvContent"
+                    android:layout_marginTop="11dp"
+                    android:text="@string/identify_paid"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/tvType"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/divider" />
+
+                <RelativeLayout
+                    android:id="@+id/rlUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_below="@id/tvType"
+                    android:layout_marginTop="11dp">
+
+                    <ImageView
+                        android:id="@+id/ivAvatar"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true" />
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        style="@style/d12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="40dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="55dp"
+                        android:src="@drawable/icon_clock" />
+
+                    <TextView
+                        android:id="@+id/tvTime"
+                        style="@style/d12"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_below="@id/rlUser" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"/>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tlBase"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                app:tabTextAppearance="@style/tabLayoutTextSize" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+</android.support.design.widget.CoordinatorLayout>

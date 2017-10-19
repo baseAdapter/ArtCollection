@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    android:orientation="vertical">
+    <com.youth.banner.Banner
+        android:id="@+id/banner_exchangeMall"
+        android:layout_width="match_parent"
+        android:layout_height="165dp">
+    </com.youth.banner.Banner>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:id="@+id/goldCoinExchangeLay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_goldcoin_exchange"
+            android:orientation="vertical"
+            android:onClick="onClick">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/icon_goldcoin_exchange"
+                android:layout_marginTop="13dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/tv_bg"
+                android:text="1000"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/recordExchangeLay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_record_exchange"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical"
+            android:onClick="onClick">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/icon_record_exchange"
+                android:layout_marginTop="15dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exchange_record"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="11dp"
+                android:textColor="@color/tv_bg"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/addressExchangeLay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_address_exchange"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="7dp"
+            android:orientation="vertical"
+            android:onClick="onClick">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/icon_address_exchange" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exchange_address"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/tv_bg"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

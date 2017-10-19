@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+  <!-- 设置边框 -->
+  
+  <solid android:color="@color/e"/><!-- 填充的颜色 -->
+  <!-- 指定圆角矩形的4个圆角的半径 -->
+ 	<corners 
+ 	    android:topLeftRadius="4dp"
+ 	    android:topRightRadius="4dp"
+ 	    android:bottomLeftRadius="4dp"
+ 	    android:bottomRightRadius="4dp"
+ 	    />
+</shape>

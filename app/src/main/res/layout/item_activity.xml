@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/flLesson"
+    android:layout_width="match_parent"
+    android:layout_height="256dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/ivPic"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        style="@style/w15"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="170dp"
+        android:background="@color/orange_transparent"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="210dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/c14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="90dp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            style="@style/r12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="15dp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="235dp">
+
+        <TextView
+            android:id="@+id/tvFee"
+            style="@style/c12"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="35dp"
+            android:src="@drawable/icon_circle_comment" />
+
+        <TextView
+            android:id="@+id/tvComment"
+            style="@style/d12"
+            android:layout_width="30dp"
+            android:gravity="right"
+            android:paddingRight="10dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="90dp"
+            android:src="@drawable/icon_see" />
+
+        <TextView
+            android:gravity="right"
+            android:paddingRight="10dp"
+            android:id="@+id/tvSee"
+            style="@style/d12"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="50dp" />
+    </FrameLayout>
+</FrameLayout>

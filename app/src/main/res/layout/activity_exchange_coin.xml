@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/tv_bg"
+    tools:context="com.tsutsuku.artcollection.ui.exchange.ExchangeCoinActivity">
+
+    <include layout="@layout/base_title_tv"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前积分:"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="34dp"
+            android:textSize="13sp"/>
+        <TextView
+            android:id="@+id/currentIntegration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:layout_marginLeft="14dp"
+            android:textSize="16sp"
+            android:textColor="@color/orange"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="当前金币:"
+            android:layout_marginLeft="65dp"
+            android:textSize="13sp"/>
+        <TextView
+            android:id="@+id/currentCoins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:layout_marginLeft="14dp"
+            android:textSize="16sp"
+            android:text="0"
+            android:textColor="@color/orange"/>
+
+    </LinearLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/view"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/icon_credits"
+            android:layout_gravity="center_vertical"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="使用积分"
+            android:textSize="12sp"
+            android:textColor="@color/orange"
+            android:layout_marginLeft="8dp"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:id="@+id/coinMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_minus"
+            android:layout_marginLeft="16dp"
+            android:layout_gravity="center_vertical"/>
+        <Button
+            android:id="@+id/showIntegration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/img_boxs"
+            android:textSize="17sp"
+            android:text="0"/>
+        <ImageView
+            android:id="@+id/coinPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_plus"
+            android:layout_marginLeft="16dp"
+            android:layout_gravity="center_vertical"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_arrowdown"
+        android:layout_marginLeft="190dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_gold_coin"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="3dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="折合金币"
+            android:textSize="12sp"
+            android:textColor="@color/orange"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_marginBottom="3dp"/>
+
+        <Button
+            android:id="@+id/numCoinBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="46dp"
+            android:text="0"
+            android:background="@drawable/img_boxs"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="枚"
+            android:layout_marginLeft="15dp"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/view"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <Button
+            android:id="@+id/sureExchangeBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/button_submit"
+            android:text="确认兑换"
+            android:textColor="@color/tv_bg"
+            android:textSize="15sp"/>
+    </RelativeLayout>
+
+
+
+</LinearLayout>

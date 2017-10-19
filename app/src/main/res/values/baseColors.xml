@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_transparent">#80000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="divider">#CCCCCC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="records_green">#0C7559</color>
+    <color name="status_blue">#CCB9F8</color>
+
+    <color name="bg_goods">#F8F8F8</color>
+
+    <!--测试专用 -->
+    <color name="bg_test">#f20505</color>
+
+</resources>

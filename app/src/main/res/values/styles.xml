@@ -1,0 +1,225 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/bg</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <declare-styleable name="Follow">
+        <attr name="target" format="reference" />
+    </declare-styleable>
+
+    <style name="a18">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="a16">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="b19">
+        <item name="android:textColor">@color/b</item>
+        <item name="android:textSize">19dp</item>
+    </style>
+
+    <style name="b16">
+        <item name="android:textColor">@color/b</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="b15">
+        <item name="android:textColor">@color/b</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="c17">
+        <item name="android:textColor">@color/c</item>
+        <item name="android:textSize">17dp</item>
+    </style>
+
+    <style name="c16">
+        <item name="android:textColor">@color/c</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="c15">
+        <item name="android:textColor">@color/c</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="c14">
+        <item name="android:textColor">@color/c</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="c13">
+        <item name="android:textColor">@color/c</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <style name="c12">
+        <item name="android:textColor">@color/c</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="d15">
+        <item name="android:textColor">@color/d</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="d14">
+        <item name="android:textColor">@color/d</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="d13">
+        <item name="android:textColor">@color/d</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <style name="d12">
+        <item name="android:textColor">@color/d</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="d11">
+        <item name="android:textColor">@color/d</item>
+        <item name="android:textSize">11dp</item>
+    </style>
+
+    <style name="d10">
+        <item name="android:textColor">@color/d</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <style name="e15">
+        <item name="android:textColor">@color/e</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="e13">
+        <item name="android:textColor">@color/e</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <style name="o24">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">24dp</item>
+    </style>
+
+    <style name="o21">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">21dp</item>
+    </style>
+
+    <style name="o18">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="o16">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="o15">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="o14">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="o13">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <style name="o12">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="o10">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <style name="w43">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">43dp</item>
+    </style>
+
+    <style name="w18">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="w17">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17dp</item>
+    </style>
+
+    <style name="w15">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="w13">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <style name="w12">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="r18">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="r12">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="i15">
+        <item name="android:textColor">@color/c</item>
+        <item name="android:textColorHint">@color/e</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="i13">
+        <item name="android:textColor">@color/c</item>
+        <item name="android:textColorHint">@color/e</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!--主页内菜单字体大小-->
+    <style name="tabLayoutTextSize" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+</resources>

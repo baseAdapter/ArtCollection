@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/flTitle"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@color/transparent">
+
+    <View
+        android:id="@+id/vBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="@color/white" />
+
+    <ImageButton
+        android:id="@+id/ibBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:background="@color/transparent"
+        android:src="@drawable/icon_w_back" />
+
+    <ImageButton
+        android:id="@+id/ibSCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="60dp"
+        android:background="@color/transparent"
+        android:src="@drawable/icon_w_cart" />
+
+    <ImageButton
+        android:id="@+id/ibShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="5dp"
+        android:background="@color/transparent"
+        android:src="@drawable/icon_w_share" />
+
+    <View
+        android:id="@+id/vDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_gravity="bottom"
+        android:background="@color/divider"
+        android:visibility="gone" />
+</FrameLayout>

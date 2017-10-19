@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/flBase"
+    android:layout_height="246dp">
+
+    <ImageView
+        android:id="@+id/ivPoint"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="180dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="180dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/b15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/tvPoint"
+            style="@style/c12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="35dp" />
+    </FrameLayout>
+</FrameLayout>

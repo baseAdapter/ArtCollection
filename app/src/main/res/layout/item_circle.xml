@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvCircle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:contentPaddingBottom="10dp"
+    app:contentPaddingLeft="15dp"
+    app:contentPaddingRight="15dp">
+
+    <ImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp" />
+
+    <ImageView
+        android:id="@+id/ivShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/icon_share_xxhdpi" />
+
+    <TextView
+        android:id="@+id/tvName"
+        style="@style/c15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:layout_marginRight="130dp"
+        android:layout_marginTop="15dp"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        style="@style/d12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="36dp" />
+
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_delete_white_24dp"
+        android:tint="@color/e"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/c14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="95dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <com.tsutsuku.artcollection.view.ExpandableTextView
+                android:id="@+id/etvContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:animDuration="200"
+                app:maxCollapsedLines="4">
+
+                <TextView
+                    android:id="@+id/expandable_text"
+                    style="@style/d13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.tsutsuku.artcollection.view.ExpandableTextView>
+
+            <ImageView
+                android:id="@+id/ivComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/rvPic"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/icon_circle_comment" />
+
+            <TextView
+                android:id="@+id/tvComment"
+                style="@style/d12"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ivComment"
+                android:layout_alignParentRight="true" />
+
+            <ImageView
+                android:id="@+id/ivThumb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ivComment"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="90dp"
+                android:src="@drawable/icon_circle_follow" />
+
+            <TextView
+                android:id="@+id/tvThumb"
+                style="@style/d12"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ivComment"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="50dp" />
+
+            <com.tsutsuku.artcollection.view.PicRecyclerView
+                android:id="@+id/rvPic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/etvContent"
+                android:layout_marginTop="15dp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="95dp"
+        android:src="@drawable/icon_check_status" />
+</android.support.v7.widget.CardView>

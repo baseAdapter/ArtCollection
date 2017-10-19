@@ -1,0 +1,11 @@
+
+N"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(ºÖ
+`squid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ºÖ
+Psquid:S1066"/Merge this if statement with the enclosing one.(Ä¸ş®øÿÿÿÿ8Ş†ò·á+
+Wsquid:S2696"6Make the enclosing method "static" or remove this set.(³ÖêÑıÿÿÿÿ8Ş†ò·á+
+Wsquid:S2696"6Make the enclosing method "static" or remove this set.(üñÛêüÿÿÿÿ8Ş†ò·á+
+]squid:CallToDeprecatedMethod"0Remove this use of "getColor"; it is deprecated.(°ññƒ8Ş†ò·á+
+]squid:CallToDeprecatedMethod"0Remove this use of "getColor"; it is deprecated.(°ññƒ8Ş†ò·á+
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ø´´øÿÿÿÿ8Ş†ò·á+
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÿİç›üÿÿÿÿ8Ş†ò·á+
+ksquid:MaximumInheritanceDepth"=This class has 12 parents which is greater than 5 authorized.(‹º§—8Ş†ò·á+
