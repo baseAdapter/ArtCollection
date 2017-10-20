@@ -9,8 +9,6 @@ import com.tsutsuku.artcollection.ui.base.BaseActivity;
 import butterknife.BindView;
 
 public class IntegrationDetailActivity extends BaseActivity {
-
-
     @BindView(R.id.rvBase)
     RecyclerView mRecyclerView;
 
@@ -27,7 +25,6 @@ public class IntegrationDetailActivity extends BaseActivity {
 
     @Override
     public void initListeners() {
-
 
     }
 
