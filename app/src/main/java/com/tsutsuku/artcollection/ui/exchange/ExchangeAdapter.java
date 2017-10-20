@@ -13,8 +13,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.tsutsuku.artcollection.R;
 import com.tsutsuku.artcollection.model.ExchangeBean;
+import com.tsutsuku.artcollection.ui.mine.ExchangeMallActivity;
 import com.tsutsuku.artcollection.ui.point.MinePointActivity;
 import com.tsutsuku.artcollection.ui.shoppingBase.ShoppingAddressActivity;
+import com.tsutsuku.artcollection.ui.utils.OnRecyclerViewListener;
 import com.tsutsuku.artcollection.utils.GlideImageLoader;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -28,7 +30,7 @@ import java.util.List;
  * Created by Administrator on 2017/10/7.
  */
 
-public class ExchangeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  {
+public class ExchangeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public static final String TAG = ExchangeAdapter.class.getSimpleName();
 
     private static final int TYPE_HEADER = 0, TYPE_ITEM = 1;
@@ -36,11 +38,13 @@ public class ExchangeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private List<ExchangeBean> mData;
 
     private List<String> imgs;
+    OnRecyclerViewListener listener;
 
 
-    public ExchangeAdapter(Context context) {
+    public ExchangeAdapter(ExchangeMallActivity context) {
         this.context = context;
         imgs = new ArrayList<>();
+        this.listener = context;
     }
 
     public void setData(List<ExchangeBean> mData) {
@@ -100,10 +104,9 @@ public class ExchangeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         switch (getItemViewType(position)) {
             case TYPE_HEADER:
-
                 HeaderViewHolder headViewHolder = (HeaderViewHolder) holder;
                 headViewHolder.banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
                 //设置图片加载器
@@ -128,11 +131,17 @@ public class ExchangeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 break;
             case TYPE_ITEM:
                 ViewHolder itemHolder = (ViewHolder) holder;
-                itemHolder.itemView.setTag(position-1);
-                ExchangeBean data = mData.get(position-1);
+                itemHolder.itemView.setTag(position - 1);
+                ExchangeBean data = mData.get(position - 1);
                 itemHolder.priceText.setText(data.getNeed_gold() + "金币");
                 itemHolder.nameText.setText(data.getName());
                 Glide.with(context).load(data.getCoverPhoto()).into(itemHolder.itemImageView);
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        listener.onItemClick(holder.itemView, position);
+                    }
+                });
                 break;
         }
 
@@ -146,8 +155,6 @@ public class ExchangeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             return 1;
         }
     }
-
-
 
 
     public class HeaderViewHolder extends RecyclerView.ViewHolder {

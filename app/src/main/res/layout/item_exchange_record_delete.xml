@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110dp">
+    <ImageView
+        android:id="@+id/record_icon"
+        android:layout_width="93dp"
+        android:layout_height="93dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="13dp"/>
+
+    <TextView
+        android:id="@+id/record_nameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="26dp"
+        android:layout_toRightOf="@+id/record_icon"
+        android:layout_toEndOf="@+id/record_icon"
+        android:text="守护说的是是的"
+        android:maxEms="8"
+        android:textSize="14sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/record_nameTv"
+        android:layout_alignLeft="@+id/record_nameTv"
+        android:layout_alignStart="@+id/record_nameTv"
+        android:layout_marginTop="36dp"
+        android:id="@+id/record_timeTv"
+        android:textSize="10sp"
+        android:text="无谓的伟大"/>
+
+    <TextView
+        android:id="@+id/record_goldTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="13dp"
+        android:layout_alignBaseline="@+id/record_nameTv"
+        android:layout_alignBottom="@+id/record_nameTv"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="300"/>
+    <TextView
+        android:id="@+id/record_numTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/record_nameTv"
+        android:layout_alignRight="@+id/record_goldTv"
+        android:layout_alignEnd="@+id/record_goldTv"
+        android:layout_marginTop="15dp"
+        android:text="x2"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/divider" />
+
+
+
+</RelativeLayout>

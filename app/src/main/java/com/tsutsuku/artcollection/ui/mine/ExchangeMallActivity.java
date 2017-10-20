@@ -1,6 +1,7 @@
 package com.tsutsuku.artcollection.ui.mine;
 
 
+import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,6 +14,8 @@ import com.tsutsuku.artcollection.http.HttpsClient;
 import com.tsutsuku.artcollection.model.ExchangeBean;
 import com.tsutsuku.artcollection.ui.base.BaseActivity;
 import com.tsutsuku.artcollection.ui.exchange.ExchangeAdapter;
+import com.tsutsuku.artcollection.ui.exchange.ExchangeProductDetailActivity;
+import com.tsutsuku.artcollection.ui.utils.OnRecyclerViewListener;
 import com.tsutsuku.artcollection.utils.DensityUtils;
 import com.tsutsuku.artcollection.utils.GsonUtils;
 import com.tsutsuku.artcollection.utils.SharedPref;
@@ -29,7 +32,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ExchangeMallActivity extends BaseActivity {
+public class ExchangeMallActivity extends BaseActivity implements OnRecyclerViewListener {
     public static final String TAG = ExchangeMallActivity.class.getSimpleName();
     @BindView(R.id.rvBase)
     RecyclerView mRvBase;
@@ -131,4 +134,11 @@ public class ExchangeMallActivity extends BaseActivity {
     }
 
 
+    @Override
+    public void onItemClick(View view, int position) {
+        Intent intent = new Intent(getBaseContext(), ExchangeProductDetailActivity.class);
+        intent.putExtra("ExchangeBean.data", mList.get(position));
+        startActivity(intent);
+
+    }
 }
