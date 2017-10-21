@@ -1,9 +1,6 @@
 package com.tsutsuku.artcollection.ui.exchange;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,6 +12,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.tsutsuku.artcollection.R;
 import com.tsutsuku.artcollection.common.Constants;
+import com.tsutsuku.artcollection.common.Intents;
 import com.tsutsuku.artcollection.http.HttpResponseHandler;
 import com.tsutsuku.artcollection.http.HttpsClient;
 import com.tsutsuku.artcollection.model.ExchangeBean;
@@ -43,30 +41,30 @@ public class ExchangeStateActivity extends BaseActivity {
     @BindView(R.id.rlDelivery)
     RelativeLayout mRelativeDelivery;
     /**
-     *收货人的姓名
+     * 收货人的姓名
      **/
     @BindView(R.id.addressName)
     TextView mAddressName;
     /**
-     *收货人的电话
+     * 收货人的电话
      **/
     @BindView(R.id.addressMobile)
     TextView mAddressMobile;
     /**
-     *收货人的地址
+     * 收货人的地址
      **/
     @BindView(R.id.address)
     TextView mAddressTv;
     @BindView(R.id.icon_product)
     ImageView mIconProduct;
     /**
-     *兑换的产品名称
+     * 兑换的产品名称
      **/
     @BindView(R.id.exchange_product_name)
     TextView mProductName;
 
     /**
-     *兑换产品所需要的金币数
+     * 兑换产品所需要的金币数
      **/
     @BindView(R.id.product_need_coin)
     TextView mNeedCoin;
@@ -80,7 +78,7 @@ public class ExchangeStateActivity extends BaseActivity {
     ImageView mIconRight;
 
     /**
-     *兑换的数量
+     * 兑换的数量
      **/
     @BindView(R.id.totalCountNumber)
     TextView mCountNumber;
@@ -89,7 +87,7 @@ public class ExchangeStateActivity extends BaseActivity {
     @BindView(R.id.totalCountCoin)
     TextView mTotalCoin;
     /**
-     *使用金币
+     * 使用金币
      **/
     @BindView(R.id.userCoins)
     TextView mUserCoins;
@@ -97,15 +95,15 @@ public class ExchangeStateActivity extends BaseActivity {
     @BindView(R.id.delivery_way)
     TextView mDeliveryWay;
 
-    private int price , num;
+    private int price, num;
 
     /**
-     *地址entity
+     * 地址entity
      **/
     private ItemAddress mItemAddress;
 
     /**
-     *配送entity
+     * 配送entity
      **/
     private DeliveryBean mDeliveryBean;
 
@@ -143,30 +141,32 @@ public class ExchangeStateActivity extends BaseActivity {
     public void initData() {
         mProductName.setText(mBean.getName());
         exchangeNumber = getIntent().getExtras().get("ExchangeNumber").toString();
-        num =  Integer.valueOf(exchangeNumber);
+        num = Integer.valueOf(exchangeNumber);
         price = Integer.valueOf(mBean.getNeed_gold());
         mCount.setText("x" + exchangeNumber);
-        mCountNumber.setText("共"+ num + "件商品");
+        mCountNumber.setText("共" + num + "件商品");
         mTotalCoin.setText(num * price + "金币");
-        mNeedCoin.setText(price  + "金币");
+        mNeedCoin.setText(price + "金币");
         mUserCoins.setText(num * price + "金币");
         Glide.with(this).load(mBean.getCoverPhoto()).into(mIconProduct);
-
+        getDefaultAddress();
+        getDeliveryWay();
     }
 
-    @OnClick({R.id.rlExchangeAddress,R.id.rlDelivery,R.id.submitOrder})
+
+    @OnClick({R.id.rlExchangeAddress, R.id.rlDelivery, R.id.submitOrder})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rlExchangeAddress:
-                getDefaultAddress();
-                startActivity(new Intent(this,ShoppingAddressActivity.class));
+                //getDefaultAddress();
+                ShoppingAddressActivity.launchTypeView(this, 2);
+                //startActivity(new Intent(this,ShoppingAddressActivity.class));
                 break;
             case R.id.rlDelivery:
                 getDeliveryWay();
                 break;
             case R.id.submitOrder:
                 checkUserOrder();
-                startActivity(new Intent(this,ExchangeSuccessActivity.class));
                 break;
             default:
                 break;
@@ -174,11 +174,21 @@ public class ExchangeStateActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case 2:
+                    ItemAddress item = data.getParcelableExtra(Intents.ADDRESS);
+                    setAddressData(item);
+                    break;
+            }
+        }
+    }
+
     /**
-     *
      * 请求接口:
      * 判断采用哪种方式配送
-     *
      **/
     private void getDeliveryWay() {
         HashMap<String, String> hashMap = new HashMap<>();
@@ -215,10 +225,8 @@ public class ExchangeStateActivity extends BaseActivity {
     }
 
     /**
-     *
      * 请求接口:checkUserOrder
      * 判断是否兑换成功
-     *
      **/
     private void checkUserOrder() {
         HashMap<String, String> hashMap = new HashMap<>();
@@ -226,8 +234,8 @@ public class ExchangeStateActivity extends BaseActivity {
         hashMap.put("user_id", SharedPref.getString(Constants.USER_ID));
         hashMap.put("product_id", mBean.getId());
         hashMap.put("product_nums", exchangeNumber);
-        hashMap.put("gold_nums", String.valueOf(num*price));
-        hashMap.put("address_id",mItemAddress.getAddressId() );
+        hashMap.put("gold_nums", String.valueOf(num * price));
+        hashMap.put("address_id", mItemAddress.getAddressId());
         hashMap.put("delivery_type", String.valueOf(mDeliveryBean.getDeliveryId()));
 
         HttpsClient client = new HttpsClient();
@@ -235,7 +243,8 @@ public class ExchangeStateActivity extends BaseActivity {
             @Override
             protected void onSuccess(int statusCode, JSONObject data) throws Exception {
                 if (data.getInt("code") == 0) {
-
+                    finish();
+                    startActivity(new Intent(ExchangeStateActivity.this, ExchangeSuccessActivity.class));
                 }
             }
 
@@ -280,9 +289,7 @@ public class ExchangeStateActivity extends BaseActivity {
 
 
     /**
-     * @param itemAddress
-     * 设置默认的地址信息
-     *
+     * @param itemAddress 设置默认的地址信息
      **/
 
     private void setAddressData(ItemAddress itemAddress) {

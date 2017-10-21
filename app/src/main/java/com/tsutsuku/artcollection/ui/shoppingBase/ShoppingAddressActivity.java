@@ -29,6 +29,7 @@ public class ShoppingAddressActivity extends BaseActivity implements ShoppingAdd
 
     private static final String TYPE = "type";
     ShoppingAddressPresenterImpl presenter;
+    int type;
 
     public static void launchTypeEdit(Context context) {
         context.startActivity(new Intent(context, ShoppingAddressActivity.class)
@@ -52,8 +53,8 @@ public class ShoppingAddressActivity extends BaseActivity implements ShoppingAdd
 
         presenter = new ShoppingAddressPresenterImpl(context, getIntent().getIntExtra(TYPE, ShoppingAddressPresenterImpl.TYPE_EDIT));
         presenter.attachView(this);
-
-        initTitle(getIntent().getIntExtra(TYPE, ShoppingAddressPresenterImpl.TYPE_EDIT) == ShoppingAddressPresenterImpl.TYPE_EDIT ? R.string.mine_address : R.string.select_address);
+        type = getIntent().getIntExtra(TYPE, 0);
+        initTitle(type == ShoppingAddressPresenterImpl.TYPE_EDIT ? R.string.mine_address : R.string.select_address);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(context);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
