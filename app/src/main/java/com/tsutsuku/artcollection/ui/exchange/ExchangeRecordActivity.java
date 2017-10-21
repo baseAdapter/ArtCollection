@@ -76,15 +76,10 @@ public class ExchangeRecordActivity extends BaseActivity implements ExchangeReco
         client.post(hashMap, new HttpResponseHandler() {
             @Override
             protected void onSuccess(int statusCode, JSONObject data) throws Exception {
-                List<ExchangeRecord> list = GsonUtils.parseJsonArray(data.getJSONObject("list").getString("list"), ExchangeRecord.class);
-                for (int i = 0; i < list.size(); i++) {
-                    ExchangeRecord record = list.get(i);
-                    mList.add(record);
-                }
+                mList = GsonUtils.parseJsonArray(data.getJSONObject("list").getString("list"), ExchangeRecord.class);
                 if (mList.size() != 0) {
                     mAdapter.update(mList);
                 }
-
             }
 
             @Override
@@ -95,7 +90,7 @@ public class ExchangeRecordActivity extends BaseActivity implements ExchangeReco
 
     }
 
-    private void deleteRecord(int id) {
+    private void deleteRecord(long id) {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("service", "Gold.deleteSingleRecord");
         hashMap.put("user_id", SharedPref.getString(Constants.USER_ID));
@@ -127,7 +122,7 @@ public class ExchangeRecordActivity extends BaseActivity implements ExchangeReco
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(long id) {
         deleteRecord(id);
     }
 

@@ -57,7 +57,7 @@ public class ExchangeRecordAdapter extends RecyclerView.Adapter<ExchangeRecordAd
         final ExchangeRecord record = mData.get(position);
         holder.goldNumRecord.setText(record.getGoldAmount() + "金币");
         holder.nameRecord.setText(record.getName());
-        holder.numberRecord.setText("x  " + record.getOutOrderId());
+        holder.numberRecord.setText("x  " + record.getNums());
         holder.timeRecord.setText(record.getCreateTime());
         holder.itemView.setTag(position);
         Glide.with(context).load(BASE_ICON_URL + record.getCoverPhoto()).into(holder.iconUrl);
@@ -65,7 +65,7 @@ public class ExchangeRecordAdapter extends RecyclerView.Adapter<ExchangeRecordAd
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.delete(record.getOutOrderId());
+                listener.delete(Long.parseLong(record.getOrderId()));
                 ((SwipeMenuLayout) finalConvertView).quickClose();
             }
         });
@@ -101,6 +101,6 @@ public class ExchangeRecordAdapter extends RecyclerView.Adapter<ExchangeRecordAd
     }
 
     public interface OnDeleteListener {
-        void delete(int id);
+        void delete(long id);
     }
 }
