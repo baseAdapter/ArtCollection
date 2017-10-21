@@ -11,6 +11,7 @@
     <color name="orange_transparent">#A0E8800F</color>
     <color name="red">#F53B04</color>
     <color name="little_orange">#F0AA60</color>
+    <color name="bg_delete">#ff3b30</color>
 
     <color name="b">#333333</color>
     <color name="background">#B3B3B3 </color>

@@ -30,9 +30,8 @@ public class BaseApplication extends Application {
         ShareSDK.initSDK(this);
     }
 
-    private void init(){
+    private void init() {
         NoHttp.initialize(this);
-
     }
 
     //初始化Realm数据库

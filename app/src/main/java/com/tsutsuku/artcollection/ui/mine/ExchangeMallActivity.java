@@ -137,8 +137,7 @@ public class ExchangeMallActivity extends BaseActivity implements OnRecyclerView
     @Override
     public void onItemClick(View view, int position) {
         Intent intent = new Intent(getBaseContext(), ExchangeProductDetailActivity.class);
-        intent.putExtra("ExchangeBean.data", mList.get(position));
+        intent.putExtra("ExchangeBean.data", mList.get(position - 1));
         startActivity(intent);
-
     }
 }
