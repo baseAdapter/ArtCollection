@@ -73,7 +73,7 @@ public class ExchangeProductDetailActivity extends BaseActivity {
 
     private int mTotalGold;//剩余金币
     private int need_gold;//需要金币
-    private int mSateCoins;
+    private boolean coins;//金币不足标记
     private int num = 1;
 
 
@@ -125,7 +125,11 @@ public class ExchangeProductDetailActivity extends BaseActivity {
                 return true;
             }
         });
-
+        if (mBean.getIsCollection() == 0) {
+            mDetailCollect.setImageResource(R.drawable.icon_collect);
+        } else {
+            mDetailCollect.setImageResource(R.drawable.icon_collected);
+        }
         getData();
 
     }
@@ -145,6 +149,7 @@ public class ExchangeProductDetailActivity extends BaseActivity {
                     mTotalGold = GsonUtils.parseJson(data.getString("info"), CountInfoBean.class).getGoldTotal();
                     if (mTotalGold < need_gold) {
                         mRestCoins.setText("金币不足");
+                        coins = true;
                     } else {
                         num = 1;
                         mTotalGold -= need_gold;
@@ -168,7 +173,12 @@ public class ExchangeProductDetailActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.detailCollect:
-                getCollectionInfo();
+                if (mBean.getIsCollection() == 0) {
+                    addCollection();
+                } else {
+                    deleteCollection();
+                }
+                // getCollectionInfo();
                 break;
             case R.id.detailShare:
 
@@ -180,6 +190,10 @@ public class ExchangeProductDetailActivity extends BaseActivity {
                 addExchangeProduct();
                 break;
             case R.id.exchangeRight:
+                if (coins) {
+                    ToastUtils.showMessage("金币不足");
+                    return;
+                }
                 Intent intent = new Intent(this, ExchangeStateActivity.class);
                 intent.putExtra("ExchangeBean.data", getIntent().getSerializableExtra("ExchangeBean.data"));
                 intent.putExtra("ExchangeNumber", num);
@@ -196,7 +210,7 @@ public class ExchangeProductDetailActivity extends BaseActivity {
      * 请求接口：Collection.add
      * 收藏商品
      ***/
-    private void getCollectionInfo() {
+    private void addCollection() {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("service", "Collections.add");
         hashMap.put("userId", SharedPref.getString(Constants.USER_ID));
@@ -208,12 +222,37 @@ public class ExchangeProductDetailActivity extends BaseActivity {
             @Override
             protected void onSuccess(int statusCode, JSONObject data) throws Exception {
                 if (data.getInt("code") == 0) {
-//                    if (!isChecked) {
-//                        mDetailCollect.setImageResource(R.drawable.icon_collected);
-//                    }else {
-//                        mDetailCollect.setImageResource(R.drawable.icon_collect);
-//                    }
+                    mDetailCollect.setImageResource(R.drawable.icon_collected);
+                    mBean.setIsCollection(1);
+                }
+            }
 
+            @Override
+            protected void onFailed(int statusCode, Exception e) {
+
+            }
+        });
+
+    }
+
+    /**
+     * 请求接口：Collection.add
+     * 收藏商品
+     ***/
+    private void deleteCollection() {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("service", "Collections.delete");
+        hashMap.put("userId", SharedPref.getString(Constants.USER_ID));
+        hashMap.put("ctype", "4");
+        hashMap.put("pId", mBean.getId());
+
+        HttpsClient client = new HttpsClient();
+        client.post(hashMap, new HttpResponseHandler() {
+            @Override
+            protected void onSuccess(int statusCode, JSONObject data) throws Exception {
+                if (data.getInt("code") == 0) {
+                    mDetailCollect.setImageResource(R.drawable.icon_collect);
+                    mBean.setIsCollection(0);
                 }
             }
 
@@ -229,7 +268,7 @@ public class ExchangeProductDetailActivity extends BaseActivity {
      * 点击添加兑换商品的数量
      **/
     private void addExchangeProduct() {
-        if (mTotalGold < need_gold * (num + 1)) {
+        if (mTotalGold < need_gold) {
             ToastUtils.showMessage("金币不足");
         } else {
             num += 1;

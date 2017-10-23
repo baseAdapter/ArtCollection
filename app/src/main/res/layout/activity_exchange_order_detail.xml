@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tsutsuku.artcollection.ui.exchange.ExchangeOrderDetailActivity">
+
+    <include layout="@layout/base_title"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/orderAddressName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/orderAddressMobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/addressName"
+            android:layout_marginLeft="60dp"
+            android:layout_toRightOf="@+id/addressName"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/orderAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/addressName"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="22dp"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/icon_arrow_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_arrow_right"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="15dp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/c">
+    </View>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp">
+        <ImageView
+            android:id="@+id/order_icon_product"
+            android:layout_width="99dp"
+            android:layout_height="99dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"/>
+
+        <TextView
+            android:id="@+id/order_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/order_icon_product"
+            android:text="飘花翡翠镯"
+            android:maxEms="13"
+            android:lines="2"
+            android:layout_marginTop="34dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/order_product_need_coin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/order_product_name"
+            android:layout_toRightOf="@+id/order_icon_product"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:text="100积分"/>
+
+        <TextView
+            android:id="@+id/order_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBaseline="@+id/order_product_name"
+            android:layout_marginLeft="133dp"
+            android:layout_marginRight="20dp"
+            android:text="x 1"/>
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/c">
+    </View>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="实付款"
+            android:textSize="14sp"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/disbursements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/text4"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/text4"
+            android:layout_toRightOf="@+id/text5"
+            android:layout_marginLeft="6dp"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/c">
+    </View>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/order_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="14dp"/>
+        <TextView
+            android:id="@+id/order_create_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="11dp"
+            android:layout_below="@+id/order_id"/>
+        <TextView
+            android:id="@+id/order_payment_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="11dp"
+            android:layout_below="@+id/order_create_time"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

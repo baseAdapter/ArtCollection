@@ -12,6 +12,7 @@ android {
         versionCode 9
         versionName "1.0.6"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
 
         ndk {
             abiFilters 'armeabi-v7a'

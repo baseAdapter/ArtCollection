@@ -1,6 +1,7 @@
 package com.tsutsuku.artcollection.ui.exchange;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,6 +68,15 @@ public class ExchangeRecordAdapter extends RecyclerView.Adapter<ExchangeRecordAd
             public void onClick(View v) {
                 listener.delete(Long.parseLong(record.getOrderId()));
                 ((SwipeMenuLayout) finalConvertView).quickClose();
+            }
+        });
+        holder.ll_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(context, ExchangeOrderDetailActivity.class);
+                intent.putExtra("id", record.getOrderId());
+                context.startActivity(intent);
             }
         });
 

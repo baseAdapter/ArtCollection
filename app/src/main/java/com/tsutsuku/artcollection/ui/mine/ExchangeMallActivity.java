@@ -76,9 +76,14 @@ public class ExchangeMallActivity extends BaseActivity implements OnRecyclerView
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        getData();
+    }
+
+    @Override
     public void initData() {
         mAdapter = new ExchangeAdapter(this);
-        getData();
         mRvBase.setLayoutManager(mLayoutManager);
         mRvBase.setAdapter(mAdapter);
 //        mAdapter.setOnItemClickListener(new ExchangeAdapter.OnItemClickListener() {
@@ -102,12 +107,10 @@ public class ExchangeMallActivity extends BaseActivity implements OnRecyclerView
             @Override
             protected void onSuccess(int statusCode, JSONObject data) throws Exception {
                 Log.i(TAG, "onSuccess" + data);
-                List<ExchangeBean> list = GsonUtils.parseJsonArray(data.getJSONObject("list").getString("list"), ExchangeBean.class);
-                for (int i = 0; i < list.size(); i++) {
-                    ExchangeBean bean = list.get(i);
-                    mList.add(bean);
-                    Log.i(TAG, "onSuccess" + bean.getCoverPhoto());
-                    mImageList.add(bean.getCoverPhoto());
+                mList = GsonUtils.parseJsonArray(data.getJSONObject("list").getString("list"), ExchangeBean.class);
+                mImageList.clear();
+                for (int i = 0; i < mList.size(); i++) {
+                    mImageList.add(mList.get(i).getCoverPhoto());
                 }
 
                 if (mList.size() != 0) {

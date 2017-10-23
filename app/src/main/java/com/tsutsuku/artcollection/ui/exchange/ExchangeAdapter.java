@@ -139,7 +139,7 @@ public class ExchangeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        listener.onItemClick(holder.itemView, position);
+                        listener.onItemClick(holder.itemView,position);
                     }
                 });
                 break;

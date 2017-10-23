@@ -1,7 +1,10 @@
 package com.tsutsuku.artcollection.ui.exchange;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -94,6 +97,8 @@ public class ExchangeStateActivity extends BaseActivity {
 
     @BindView(R.id.delivery_way)
     TextView mDeliveryWay;
+    @BindView(R.id.et_note)
+    TextView etNote;
 
     private int price, num;
 
@@ -112,6 +117,9 @@ public class ExchangeStateActivity extends BaseActivity {
      **/
     private String exchangeNumber;
 
+    ArrayAdapter<String> arrayAdapter;
+    List<DeliveryBean> deliveryBeanList;
+
     private Gson gson = new Gson();
     private Type type = new TypeToken<List<ItemAddress>>() {
     }.getType();
@@ -128,7 +136,7 @@ public class ExchangeStateActivity extends BaseActivity {
         initTitle(R.string.sure_order);
         mBean = (ExchangeBean) getIntent().getSerializableExtra("ExchangeBean.data");
 
-
+        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
     }
 
     @Override
@@ -163,7 +171,15 @@ public class ExchangeStateActivity extends BaseActivity {
                 //startActivity(new Intent(this,ShoppingAddressActivity.class));
                 break;
             case R.id.rlDelivery:
-                getDeliveryWay();
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        mDeliveryBean = deliveryBeanList.get(which);
+                        mDeliveryWay.setText(mDeliveryBean.getDeliveryName() + ">");
+                    }
+                }).show();
+
                 break;
             case R.id.submitOrder:
                 checkUserOrder();
@@ -198,22 +214,12 @@ public class ExchangeStateActivity extends BaseActivity {
             @Override
             protected void onSuccess(int statusCode, JSONObject data) throws Exception {
                 if (data.getInt("code") == 0) {
-                    List<DeliveryBean> deliveryBeanList = GsonUtils.parseJsonArray(data.getString("list"), DeliveryBean.class);
-                    for (int i = 0; i < deliveryBeanList.size(); i++) {
-                        mDeliveryBean = deliveryBeanList.get(i);
-                        switch (mDeliveryBean.getDeliveryId()) {
-                            case 1:
-                                mDeliveryWay.setText(mDeliveryBean.getDeliveryName());
-                                break;
-                            case 2:
-                                mDeliveryWay.setText(mDeliveryBean.getDeliveryName());
-                                break;
-                            case 3:
-                                mDeliveryWay.setText(mDeliveryBean.getDeliveryName());
-                                break;
-                        }
+                    deliveryBeanList = GsonUtils.parseJsonArray(data.getString("list"), DeliveryBean.class);
+                    mDeliveryBean = deliveryBeanList.get(0);
+                    for (DeliveryBean deliveryBean : deliveryBeanList) {
+                        arrayAdapter.add(deliveryBean.getDeliveryName());
                     }
-
+                    mDeliveryWay.setText(mDeliveryBean.getDeliveryName() + ">");
                 }
             }
 
@@ -237,6 +243,7 @@ public class ExchangeStateActivity extends BaseActivity {
         hashMap.put("gold_nums", String.valueOf(num * price));
         hashMap.put("address_id", mItemAddress.getAddressId());
         hashMap.put("delivery_type", String.valueOf(mDeliveryBean.getDeliveryId()));
+        hashMap.put("note", etNote.getText().toString());
 
         HttpsClient client = new HttpsClient();
         client.post(hashMap, new HttpResponseHandler() {

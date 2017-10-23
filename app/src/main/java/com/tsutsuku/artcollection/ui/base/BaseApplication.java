@@ -2,6 +2,7 @@ package com.tsutsuku.artcollection.ui.base;
 
 import android.app.Application;
 
+import com.mob.MobApplication;
 import com.tsutsuku.artcollection.im.IMHelper;
 import com.yolanda.nohttp.NoHttp;
 
@@ -12,7 +13,7 @@ import io.realm.RealmConfiguration;
 /**
  * Created by sunrenwei on 2016/5/28.
  */
-public class BaseApplication extends Application {
+public class BaseApplication extends MobApplication {
     private static Application instance;
 
     public static Application getInstance() {
