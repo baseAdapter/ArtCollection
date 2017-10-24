@@ -50,6 +50,7 @@ public class ExchangeSuccessActivity extends BaseActivity {
                 startActivity(new Intent(this,ExchangeOrderDetailActivity.class));
                 break;
             case R.id.continue_exchange:
+                finish();
                 break;
         }
     }

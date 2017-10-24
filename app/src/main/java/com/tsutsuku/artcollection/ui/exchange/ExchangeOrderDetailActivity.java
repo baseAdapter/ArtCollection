@@ -24,6 +24,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ExchangeOrderDetailActivity extends BaseActivity {
+    public static final String BASE_ICON_URL = "http://yssc.51urmaker.com/";
+
+
     @BindView(R.id.orderAddressName)
     TextView mOrderAddressName;
     @BindView(R.id.orderAddressMobile)
@@ -79,7 +82,7 @@ public class ExchangeOrderDetailActivity extends BaseActivity {
         hashMap.put("service", "Gold.orderExDetail");
         hashMap.put("user_id", SharedPref.getString(Constants.USER_ID));
         //请注意
-        hashMap.put("order_id", "2017102210257101");
+        hashMap.put("order_id", "2017102454515555");
         HttpsClient client = new HttpsClient();
         client.post(hashMap, new HttpResponseHandler() {
             @Override
@@ -93,13 +96,13 @@ public class ExchangeOrderDetailActivity extends BaseActivity {
                     if (list != null && list.size() > 0) {
                         bean = list.get(0);
                     }
-                    mOrderAddressName.setText(bean.getConsignee());
+                    mOrderAddressName.setText("收货人 : "  + bean.getConsignee());
                     mOrderAddressMobile.setText(bean.getPhone());
-                    mOrderAddress.setText(bean.getAddress());
-                    Glide.with(ExchangeOrderDetailActivity.this).load(bean.getPhoto()).into(mOrderIconProduct);
+                    mOrderAddress.setText("收货地址 : " + bean.getAddress());
+                    Glide.with(ExchangeOrderDetailActivity.this).load(BASE_ICON_URL + bean.getPhoto()).into(mOrderIconProduct);
                     mOrderProductNeedCoin.setText(bean.getTotalGolds() + "金币");
                     mOrderProductName.setText(bean.getGoodsName());
-                    mOrderCount.setText(bean.getNums());
+                    mOrderCount.setText("x " + bean.getNums());
                     mOrderId.setText("订单编号 : " + bean.getOrderId());
                     mOrderCreateTime.setText("创建时间 : " + bean.getCreateTime());
                     mOrderPaymentTime.setText("付款时间 : " + bean.getCreateTime());
