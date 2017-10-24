@@ -1,5 +1,6 @@
 package com.tsutsuku.artcollection.ui.exchange;
 
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +13,7 @@ import com.tsutsuku.artcollection.http.HttpsClient;
 import com.tsutsuku.artcollection.model.OrderDetailBean;
 import com.tsutsuku.artcollection.ui.base.BaseActivity;
 import com.tsutsuku.artcollection.utils.SharedPref;
+import com.tsutsuku.artcollection.utils.TLog;
 
 import org.json.JSONObject;
 
@@ -36,6 +38,8 @@ public class ExchangeOrderDetailActivity extends BaseActivity {
     @BindView(R.id.order_count)
     TextView mOrderCount;
 
+    @BindView(R.id.order_product_name)
+    TextView mOrderProductName;
     @BindView(R.id.order_create_time)
     TextView mOrderCreateTime;
     @BindView(R.id.order_payment_time)
@@ -80,6 +84,7 @@ public class ExchangeOrderDetailActivity extends BaseActivity {
         client.post(hashMap, new HttpResponseHandler() {
             @Override
             protected void onSuccess(int statusCode, JSONObject data) throws Exception {
+                Log.w(TAG, "onSuccess" + data);
                 Gson gson = new Gson();
                 OrderDetailBean orderDetailBean = gson.fromJson(data.toString(), OrderDetailBean.class);
                 if (orderDetailBean.getCode() == 0) {
@@ -92,12 +97,13 @@ public class ExchangeOrderDetailActivity extends BaseActivity {
                     mOrderAddressMobile.setText(bean.getPhone());
                     mOrderAddress.setText(bean.getAddress());
                     Glide.with(ExchangeOrderDetailActivity.this).load(bean.getPhoto()).into(mOrderIconProduct);
-                    mOrderProductNeedCoin.setText(bean.getTotalGolds());
+                    mOrderProductNeedCoin.setText(bean.getTotalGolds() + "金币");
+                    mOrderProductName.setText(bean.getGoodsName());
                     mOrderCount.setText(bean.getNums());
-                    mOrderId.setText(bean.getOrderId());
-                    mOrderCreateTime.setText(bean.getCreateTime());
-                    mOrderPaymentTime.setText(bean.getCreateTime());
-                    mDisbursements.setText(bean.getTotalGolds());
+                    mOrderId.setText("订单编号 : " + bean.getOrderId());
+                    mOrderCreateTime.setText("创建时间 : " + bean.getCreateTime());
+                    mOrderPaymentTime.setText("付款时间 : " + bean.getCreateTime());
+                    mDisbursements.setText(bean.getTotalGolds() + "金币");
                 }
 
             }

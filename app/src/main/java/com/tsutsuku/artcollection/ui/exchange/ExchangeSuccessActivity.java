@@ -43,11 +43,11 @@ public class ExchangeSuccessActivity extends BaseActivity {
 
     }
 
-    @OnClick()
+    @OnClick({R.id.continue_exchange,R.id.order_detail})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.order_detail:
-                startActivity(new Intent(this,OrderDetailActivity.class));
+                startActivity(new Intent(this,ExchangeOrderDetailActivity.class));
                 break;
             case R.id.continue_exchange:
                 break;
