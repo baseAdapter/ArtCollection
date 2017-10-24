@@ -8,24 +8,41 @@
         android:id="@+id/rl_item"
         android:layout_width="match_parent"
         android:layout_height="110dp">
-        <CheckBox
-            android:id="@+id/cb_edit"
-            android:layout_width="17dp"
-            android:layout_height="17dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="7dp"
-            android:background="@drawable/bg_checkbox_agree"
-            android:button="@null"
-            android:visibility="gone" />
+        <!--<CheckBox-->
+        <!--android:id="@+id/cb_edit"-->
+        <!--android:layout_width="17dp"-->
+        <!--android:layout_height="17dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginLeft="7dp"-->
+        <!--android:background="@drawable/bg_checkbox_agree"-->
+        <!--android:button="@null"-->
+        <!--android:visibility="gone" />-->
 
         <ImageView
             android:id="@+id/record_icon"
             android:layout_width="93dp"
             android:layout_height="93dp"
             android:layout_marginBottom="13dp"
-            android:layout_marginLeft="19dp"
-            android:layout_toRightOf="@+id/cb_edit"
-            android:layout_marginTop="17dp" />
+            android:layout_marginLeft="9dp"
+            android:scaleType="fitXY"
+            android:layout_marginTop="9dp" />
+        <TextView
+            android:id="@+id/record_goldTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="13dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="26dp"
+            android:text="300" />
+        <TextView
+            android:id="@+id/record_numTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/record_goldTv"
+            android:layout_below="@+id/record_goldTv"
+            android:layout_marginTop="15dp"
+            android:text="x2" />
 
         <TextView
             android:id="@+id/record_nameTv"
@@ -33,44 +50,22 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="26dp"
-            android:layout_toEndOf="@+id/record_icon"
             android:layout_toRightOf="@+id/record_icon"
-            android:maxEms="8"
-            android:text="守护说的是是的"
+            android:layout_toLeftOf="@+id/record_goldTv"
+            android:layout_marginRight="30dp"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/record_timeTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/record_nameTv"
-            android:layout_alignStart="@+id/record_nameTv"
-            android:layout_below="@+id/record_nameTv"
-            android:layout_marginTop="36dp"
+            android:layout_toRightOf="@+id/record_icon"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="75dp"
             android:text="无谓的伟大"
             android:textSize="10sp" />
-
-        <TextView
-            android:id="@+id/record_goldTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/record_nameTv"
-            android:layout_alignBottom="@+id/record_nameTv"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginEnd="13dp"
-            android:layout_marginRight="14dp"
-            android:text="300" />
-
-        <TextView
-            android:id="@+id/record_numTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/record_goldTv"
-            android:layout_alignRight="@+id/record_goldTv"
-            android:layout_below="@+id/record_nameTv"
-            android:layout_marginTop="15dp"
-            android:text="x2" />
 
         <View
             android:layout_width="match_parent"
@@ -80,12 +75,13 @@
 
 
     </RelativeLayout>
+
     <TextView
         android:id="@+id/delete"
         android:layout_width="52dp"
-        android:background="@color/bg_delete"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
+        android:background="@color/bg_delete"
         android:gravity="center"
         android:text="删除"
         android:textColor="@color/white" />

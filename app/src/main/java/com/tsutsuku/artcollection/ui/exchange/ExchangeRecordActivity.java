@@ -10,11 +10,8 @@ import com.tsutsuku.artcollection.common.Constants;
 import com.tsutsuku.artcollection.http.HttpResponseHandler;
 import com.tsutsuku.artcollection.http.HttpsClient;
 import com.tsutsuku.artcollection.ui.base.BaseActivity;
-import com.tsutsuku.artcollection.utils.DensityUtils;
 import com.tsutsuku.artcollection.utils.GsonUtils;
 import com.tsutsuku.artcollection.utils.SharedPref;
-import com.tsutsuku.artcollection.view.ItemOffsetDecoration;
-import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import org.json.JSONObject;
 
@@ -47,11 +44,11 @@ public class ExchangeRecordActivity extends BaseActivity implements ExchangeReco
         initTitle(R.string.exchange_record);
         ButterKnife.bind(this);
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        mRvBase.addItemDecoration(new ItemOffsetDecoration(DensityUtils.dp2px(3)));
-        mRvBase.addItemDecoration(new HorizontalDividerItemDecoration.Builder(context)
-                .size(DensityUtils.dp2px(3))
-                .colorResId(R.color.transparent)
-                .build());
+//        mRvBase.addItemDecoration(new ItemOffsetDecoration(DensityUtils.dp2px(3)));
+//        mRvBase.addItemDecoration(new HorizontalDividerItemDecoration.Builder(context)
+//                .size(DensityUtils.dp2px(3))
+//                .colorResId(R.color.transparent)
+//                .build());
 
     }
 
