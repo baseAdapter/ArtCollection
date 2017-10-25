@@ -168,7 +168,7 @@ public class ExchangeStateActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.rlExchangeAddress:
                 //getDefaultAddress();
-                ShoppingAddressActivity.launchTypeView(this, 2);
+                ShoppingAddressActivity.launchTypeEdit(this);
                 //startActivity(new Intent(this,ShoppingAddressActivity.class));
                 break;
             case R.id.rlDelivery:
