@@ -6,7 +6,6 @@ import com.mob.MobApplication;
 import com.tsutsuku.artcollection.im.IMHelper;
 import com.yolanda.nohttp.NoHttp;
 
-import cn.sharesdk.framework.ShareSDK;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
@@ -28,7 +27,7 @@ public class BaseApplication extends MobApplication {
         initRealm();
         initEasemob();
 
-        ShareSDK.initSDK(this);
+        //ShareSDK.initSDK(this);
     }
 
     private void init() {

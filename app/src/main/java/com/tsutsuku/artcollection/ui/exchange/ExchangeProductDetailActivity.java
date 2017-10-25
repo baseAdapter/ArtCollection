@@ -185,6 +185,24 @@ public class ExchangeProductDetailActivity extends BaseActivity {
                 // getCollectionInfo();
                 break;
             case R.id.detailShare:
+//                OnekeyShare oks = new OnekeyShare();
+//                //关闭sso授权
+//                oks.disableSSOWhenAuthorize();
+//
+//                // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间等使用
+//                oks.setTitle(mBean.getName().length() > 30 ? mBean.getName().substring(0, 29) : mBean.getName());
+//                // text是分享文本，所有平台都需要这个字段
+//                oks.setText(mBean.getDesc().length() > 40 ? model.getBody().getDescription().substring(0, 39) : model.getBody().getDescription());
+//
+//                // url仅在微信（包括好友和朋友圈）中使用
+//                oks.setUrl(model.getBody().getUrl());
+//                oks.setTitleUrl(model.getBody().getUrl());//QQ
+//
+//                // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+//                oks.setImageUrl(model.getBody().getImage());//确保SDcard下面存在此张图片
+//
+//                // 启动分享GUI
+//                oks.show(getActivity());
 
                 break;
             case R.id.minusBt:

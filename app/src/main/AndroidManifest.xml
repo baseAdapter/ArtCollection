@@ -224,14 +224,14 @@
             android:windowSoftInputMode="stateHidden|adjustResize">
 
             <!-- QQ和QQ空间分享 QQ登录的回调必须要配置的 -->
-            <intent-filter>
-                <data android:scheme="tencent100371282" />
+            <!--<intent-filter>-->
+                <!--<data android:scheme="tencent100371282" />-->
 
-                <action android:name="android.intent.action.VIEW" />
+                <!--<action android:name="android.intent.action.VIEW" />-->
 
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+                <!--<category android:name="android.intent.category.BROWSABLE" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".wxapi.WXEntryActivity"
@@ -239,6 +239,23 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name="cn.sharesdk.tencent.qq.ReceiveActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent1106423269" />
+            </intent-filter>
+        </activity>
+
+        <meta-data android:name="Mob-AppKey" android:value="21dff52974488"/>
+        <meta-data android:name="Mob-AppSecret" android:value="2a54de5fe88fa91bcd657aad14171d79"/>
+
+        <!-- ShareSdk end -->
         <activity android:name=".ui.main.ProductSearchActivity" />
         <activity android:name=".ui.search.SearchActivity" />
         <activity android:name=".ui.mine.ChangePasswordActivity" />
