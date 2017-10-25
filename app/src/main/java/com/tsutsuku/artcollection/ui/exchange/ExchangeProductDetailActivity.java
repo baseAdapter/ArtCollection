@@ -198,10 +198,7 @@ public class ExchangeProductDetailActivity extends BaseActivity {
                     return;
                 }
                 getDefaultAddress();
-                Intent intent = new Intent(this, ExchangeStateActivity.class);
-                intent.putExtra("ExchangeBean.data", getIntent().getSerializableExtra("ExchangeBean.data"));
-                intent.putExtra("ExchangeNumber", num);
-                startActivity(intent);
+
                 break;
             default:
                 break;
@@ -222,7 +219,11 @@ public class ExchangeProductDetailActivity extends BaseActivity {
             @Override
             protected void onSuccess(int statusCode, JSONObject data) throws Exception {
                 if (data.getInt("code") == 0) {
-                    ToastUtils.showMessage(data.getString("message"));
+                    Intent intent = new Intent(getApplicationContext(), ExchangeStateActivity.class);
+                    intent.putExtra("ExchangeBean.data", getIntent().getSerializableExtra("ExchangeBean.data"));
+                    intent.putExtra("ExchangeNumber", num);
+                    startActivity(intent);
+                } else {
                     dialogShow();
                 }
             }
@@ -237,9 +238,7 @@ public class ExchangeProductDetailActivity extends BaseActivity {
     }
 
     /**
-     *
-     *提醒框弹出
-     *
+     * 提醒框弹出
      **/
     private void dialogShow() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -260,9 +259,6 @@ public class ExchangeProductDetailActivity extends BaseActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
-
-
-
 
 
     /**
