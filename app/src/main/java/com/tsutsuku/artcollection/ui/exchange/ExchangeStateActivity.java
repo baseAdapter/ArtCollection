@@ -24,6 +24,7 @@ import com.tsutsuku.artcollection.ui.base.BaseActivity;
 import com.tsutsuku.artcollection.ui.shoppingBase.ShoppingAddressActivity;
 import com.tsutsuku.artcollection.utils.GsonUtils;
 import com.tsutsuku.artcollection.utils.SharedPref;
+import com.tsutsuku.artcollection.utils.ToastUtils;
 
 import org.json.JSONObject;
 
@@ -182,7 +183,10 @@ public class ExchangeStateActivity extends BaseActivity {
 
                 break;
             case R.id.submitOrder:
-                checkUserOrder();
+                if (mItemAddress != null) {
+                    checkUserOrder();
+                } else
+                    ToastUtils.showMessage("请选择收货地址!");
                 break;
             default:
                 break;
@@ -244,7 +248,6 @@ public class ExchangeStateActivity extends BaseActivity {
         hashMap.put("address_id", mItemAddress.getAddressId());
         hashMap.put("delivery_type", String.valueOf(mDeliveryBean.getDeliveryId()));
         hashMap.put("note", etNote.getText().toString());
-
         HttpsClient client = new HttpsClient();
         client.post(hashMap, new HttpResponseHandler() {
             @Override
@@ -278,8 +281,8 @@ public class ExchangeStateActivity extends BaseActivity {
                 if (data.getInt("code") == 0) {
                     List<ItemAddress> list = GsonUtils.parseJsonArray(data.getString("list"), ItemAddress.class);
                     for (int i = 0; i < list.size(); i++) {
-                        mItemAddress = list.get(i);
-                        if (Integer.parseInt(mItemAddress.getIsDefault()) == 1) {
+                        if (Integer.parseInt(list.get(i).getIsDefault()) == 1) {
+                            mItemAddress = list.get(i);
                             setAddressData(mItemAddress);
                         }
                     }
