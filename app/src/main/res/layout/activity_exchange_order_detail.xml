@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/tv_bg"
     tools:context="com.tsutsuku.artcollection.ui.exchange.ExchangeOrderDetailActivity">
 
     <include layout="@layout/base_title"/>
@@ -128,12 +129,6 @@
             android:layout_marginRight="20dp"
             android:textSize="14sp"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/text4"
-            android:layout_toRightOf="@+id/text5"
-            android:layout_marginLeft="6dp"/>
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
@@ -157,13 +152,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="11dp"
             android:layout_below="@+id/order_id"/>
-        <TextView
-            android:id="@+id/order_payment_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="11dp"
-            android:layout_below="@+id/order_create_time"/>
+
 
 
     </RelativeLayout>

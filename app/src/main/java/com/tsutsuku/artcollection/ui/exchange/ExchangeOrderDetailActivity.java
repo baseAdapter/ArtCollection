@@ -45,8 +45,6 @@ public class ExchangeOrderDetailActivity extends BaseActivity {
     TextView mOrderProductName;
     @BindView(R.id.order_create_time)
     TextView mOrderCreateTime;
-    @BindView(R.id.order_payment_time)
-    TextView mOrderPaymentTime;
     @BindView(R.id.order_id)
     TextView mOrderId;
 
@@ -105,7 +103,6 @@ public class ExchangeOrderDetailActivity extends BaseActivity {
                     mOrderCount.setText("x " + bean.getNums());
                     mOrderId.setText("订单编号 : " + bean.getOrderId());
                     mOrderCreateTime.setText("创建时间 : " + bean.getCreateTime());
-                    mOrderPaymentTime.setText("付款时间 : " + bean.getCreateTime());
                     mDisbursements.setText(bean.getTotalGolds() + "金币");
                 }
 
