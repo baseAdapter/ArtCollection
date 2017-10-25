@@ -1,5 +1,7 @@
 package com.tsutsuku.artcollection.ui.exchange;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
 import android.webkit.WebView;
@@ -14,6 +16,7 @@ import com.tsutsuku.artcollection.http.HttpsClient;
 import com.tsutsuku.artcollection.model.CountInfoBean;
 import com.tsutsuku.artcollection.model.ExchangeBean;
 import com.tsutsuku.artcollection.ui.base.BaseActivity;
+import com.tsutsuku.artcollection.ui.shoppingBase.ShoppingAddressActivity;
 import com.tsutsuku.artcollection.utils.GlideImageLoader;
 import com.tsutsuku.artcollection.utils.GsonUtils;
 import com.tsutsuku.artcollection.utils.SharedPref;
@@ -194,6 +197,7 @@ public class ExchangeProductDetailActivity extends BaseActivity {
                     ToastUtils.showMessage("金币不足");
                     return;
                 }
+                getDefaultAddress();
                 Intent intent = new Intent(this, ExchangeStateActivity.class);
                 intent.putExtra("ExchangeBean.data", getIntent().getSerializableExtra("ExchangeBean.data"));
                 intent.putExtra("ExchangeNumber", num);
@@ -204,6 +208,61 @@ public class ExchangeProductDetailActivity extends BaseActivity {
         }
 
     }
+
+    /**
+     * 请求接口：address.get
+     * 根据默认地址的变化随时更新数据
+     **/
+    private void getDefaultAddress() {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("service", "ReceiptAddress.get");
+        hashMap.put("userId", SharedPref.getString(Constants.USER_ID));
+        HttpsClient client = new HttpsClient();
+        client.post(hashMap, new HttpResponseHandler() {
+            @Override
+            protected void onSuccess(int statusCode, JSONObject data) throws Exception {
+                if (data.getInt("code") == 0) {
+                    ToastUtils.showMessage(data.getString("message"));
+                    dialogShow();
+                }
+            }
+
+
+            @Override
+            protected void onFailed(int statusCode, Exception e) {
+
+            }
+        });
+
+    }
+
+    /**
+     *
+     *提醒框弹出
+     *
+     **/
+    private void dialogShow() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("去添加默认地址?");
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(getBaseContext(), ShoppingAddressActivity.class);
+                startActivity(intent);
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+
+
 
 
     /**
