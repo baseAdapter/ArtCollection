@@ -15,6 +15,7 @@ import com.tsutsuku.artcollection.http.HttpResponseHandler;
 import com.tsutsuku.artcollection.http.HttpsClient;
 import com.tsutsuku.artcollection.model.CountInfoBean;
 import com.tsutsuku.artcollection.model.ExchangeBean;
+import com.tsutsuku.artcollection.model.shopping.ItemAddress;
 import com.tsutsuku.artcollection.ui.base.BaseActivity;
 import com.tsutsuku.artcollection.ui.shoppingBase.ShoppingAddressActivity;
 import com.tsutsuku.artcollection.utils.GlideImageLoader;
@@ -216,13 +217,24 @@ public class ExchangeProductDetailActivity extends BaseActivity {
         hashMap.put("userId", SharedPref.getString(Constants.USER_ID));
         HttpsClient client = new HttpsClient();
         client.post(hashMap, new HttpResponseHandler() {
+            private ItemAddress itemAddress;
+
             @Override
             protected void onSuccess(int statusCode, JSONObject data) throws Exception {
                 if (data.getInt("code") == 0) {
-                    Intent intent = new Intent(getApplicationContext(), ExchangeStateActivity.class);
-                    intent.putExtra("ExchangeBean.data", getIntent().getSerializableExtra("ExchangeBean.data"));
-                    intent.putExtra("ExchangeNumber", num);
-                    startActivity(intent);
+                    List<ItemAddress> list = GsonUtils.parseJsonArray(data.getString("list"), ItemAddress.class);
+                    for (int i = 0; i < list.size(); i++) {
+                        itemAddress = list.get(i);
+                    }
+                        if (Integer.parseInt(itemAddress.getIsDefault()) == 0) {
+                            dialogShow();
+                        }else {
+                            Intent intent = new Intent(getApplicationContext(), ExchangeStateActivity.class);
+                            intent.putExtra("ExchangeBean.data", getIntent().getSerializableExtra("ExchangeBean.data"));
+                            intent.putExtra("ExchangeNumber", num);
+                            startActivity(intent);
+
+                        }
                 } else {
                     dialogShow();
                 }
