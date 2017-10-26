@@ -70,8 +70,8 @@
     <QZone
         Id="3"
         SortId="3"
-		AppId="100371282"
-		AppKey="aed9b0303e3ed1e27bae87c33761161d"
+		AppId="1106087070"
+		AppKey="8kyiGY6p39qFCkTG"
 		BypassApproval="true"
         Enable="true" />
     
@@ -117,8 +117,8 @@
 	<QQ
         Id="7"
         SortId="7"
-		AppId="1106423269"
-		AppKey="0bT6PT9U0FkEsJUe"
+		AppId="1106087070"
+		AppKey="8kyiGY6p39qFCkTG"
 		BypassApproval="false"
         ShareByAppClient="true"
         Enable="true" />

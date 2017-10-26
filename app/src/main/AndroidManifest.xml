@@ -252,8 +252,8 @@
             </intent-filter>
         </activity>
 
-        <meta-data android:name="Mob-AppKey" android:value="21dff52974488"/>
-        <meta-data android:name="Mob-AppSecret" android:value="2a54de5fe88fa91bcd657aad14171d79"/>
+        <meta-data android:name="Mob-AppKey" android:value="1106087070"/>
+        <meta-data android:name="Mob-AppSecret" android:value="8kyiGY6p39qFCkTG"/>
 
         <!-- ShareSdk end -->
         <activity android:name=".ui.main.ProductSearchActivity" />

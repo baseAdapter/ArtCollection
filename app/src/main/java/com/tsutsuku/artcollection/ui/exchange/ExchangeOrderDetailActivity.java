@@ -80,7 +80,7 @@ public class ExchangeOrderDetailActivity extends BaseActivity {
         hashMap.put("service", "Gold.orderExDetail");
         hashMap.put("user_id", SharedPref.getString(Constants.USER_ID));
         //请注意
-        hashMap.put("order_id", "2017102454515555");
+        hashMap.put("order_id", "2017102548575650");
         HttpsClient client = new HttpsClient();
         client.post(hashMap, new HttpResponseHandler() {
             @Override
