@@ -78,11 +78,10 @@ public class InviteActivity extends BaseActivity {
                     oks.setTitleUrl(model.getList().getInvite_url());//QQ
 
                     // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
-                   // oks.setImageUrl(model.getBody().getImage());//确保SDcard下面存在此张图片
+                    oks.setImageUrl("http://qp333com.oss-cn-hangzhou.aliyuncs.com/7peishang.com/avatar/2017-10-26/1982c05ad88f0e58954fa87bfd3fa6e6.jpg?x-oss-process=image/resize,m_mfit,h_210,w_210");//确保SDcard下面存在此张图片
 
                     // 启动分享GUI
                     oks.show(getApplicationContext());
-
                 }
             }
 

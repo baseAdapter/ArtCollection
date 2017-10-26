@@ -235,10 +235,10 @@
         </activity>
         <activity
             android:name=".wxapi.WXEntryActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="cn.sharesdk.tencent.qq.ReceiveActivity"
