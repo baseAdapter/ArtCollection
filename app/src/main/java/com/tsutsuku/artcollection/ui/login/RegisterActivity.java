@@ -1,5 +1,6 @@
 package com.tsutsuku.artcollection.ui.login;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.tsutsuku.artcollection.R;
 import com.tsutsuku.artcollection.common.Constants;
+import com.tsutsuku.artcollection.common.Intents;
 import com.tsutsuku.artcollection.contract.login.RegisterContract;
 import com.tsutsuku.artcollection.presenter.login.RegisterPresenterImpl;
 import com.tsutsuku.artcollection.ui.main.MainActivity;
@@ -84,6 +86,15 @@ public class RegisterActivity extends BaseActivity implements RegisterContract.V
             btnCaptcha.setText(R.string.get_captcha);
             btnCaptcha.setClickable(true);
         }
+    }
+
+    @Override
+    public void registerSuccess() {
+        Intent intent = new Intent();
+        intent.putExtra(Intents.ACCOUNT,"");
+        intent.putExtra(Intents.PASSWORD,"");
+        setResult(RESULT_OK,intent);
+        this.finish();
     }
 
     @Override

@@ -14,29 +14,9 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-/**
- * 项目名： FastEC
- * 包名：   com.flj.latte.ec.main.DomPaser
- * 文件名:  XmlPaser
- * 作者：qxf on 2017/10/25 17:29
- * 邮箱：lorderike@gmail.com
- * 描述：TODO
- */
+
 
 public class XmlPaser {
-    public void  domParse() throws Exception {
-        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-        Document document = documentBuilder.parse("ResultPlist.xml");
-        NodeList nodeList = document.getElementsByTagName("string");
-        int length = nodeList.getLength();
-        for(int i=0;i<length;i++){
-            Node node = nodeList.item(i);
-            String content = node.getTextContent();
-            System.out.println(content);
-        }
-
-    }
     public void doPaserd(TextView textView, InputStream inputStream) {
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         try {

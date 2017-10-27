@@ -70,9 +70,9 @@ public class InviteActivity extends BaseActivity {
                     oks.disableSSOWhenAuthorize();
 
                     // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间等使用
-                    oks.setTitle("测试");
+                    oks.setTitle("艺术收藏网");
                     // text是分享文本，所有平台都需要这个字段
-                    oks.setText("测试数据");
+                    oks.setText("艺术收藏网邀请好友送1000现金积分啦");
 
                     // url仅在微信（包括好友和朋友圈）中使用
                     oks.setUrl(model.getList().getInvite_url());

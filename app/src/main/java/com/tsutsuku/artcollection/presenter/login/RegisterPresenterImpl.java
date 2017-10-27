@@ -86,7 +86,7 @@ public class RegisterPresenterImpl implements RegisterContract.Presenter {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("service", "User.getToken");
         hashMap.put("mobile", account);
-        hashMap.put("checkExists", "1");
+        hashMap.put("type", "0");
         HttpsClient client = new HttpsClient();
         client.post(hashMap, new HttpResponseHandler() {
             @Override
@@ -119,6 +119,7 @@ public class RegisterPresenterImpl implements RegisterContract.Presenter {
                 if (data.getInt("code") == 0) {
                     SysUtils.saveUserInfo(data.getString("info"));
                     SysUtils.loginIM(data.getJSONObject("hxAccount").getString("username"), password);
+                    registerView.registerSuccess();
                 }
             }
 

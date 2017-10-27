@@ -12,6 +12,7 @@ import com.tsutsuku.artcollection.http.HttpsClient;
 import com.tsutsuku.artcollection.ui.base.BaseActivity;
 import com.tsutsuku.artcollection.utils.GsonUtils;
 import com.tsutsuku.artcollection.utils.SharedPref;
+import com.tsutsuku.artcollection.utils.ToastUtils;
 
 import org.json.JSONObject;
 
@@ -76,6 +77,8 @@ public class ExchangeRecordActivity extends BaseActivity implements ExchangeReco
                 mList = GsonUtils.parseJsonArray(data.getJSONObject("list").getString("list"), ExchangeRecord.class);
                 if (mList.size() != 0) {
                     mAdapter.update(mList);
+                }else {
+                    ToastUtils.showMessage("暂无兑换记录.");
                 }
             }
 

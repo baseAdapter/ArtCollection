@@ -11,6 +11,7 @@ import com.tsutsuku.artcollection.presenter.BasePresenter;
 public class RegisterContract {
     public interface View {
         void setCaptchaTime(int time);
+        void registerSuccess();
     }
 
     public interface Presenter extends BasePresenter<View> {
