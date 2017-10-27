@@ -15,6 +15,7 @@ import com.tsutsuku.artcollection.http.HttpsClient;
 import com.tsutsuku.artcollection.model.CountInfoBean;
 import com.tsutsuku.artcollection.ui.base.BaseActivity;
 import com.tsutsuku.artcollection.ui.exchange.CoinDetailActivity;
+import com.tsutsuku.artcollection.ui.exchange.CoinsRulesActivity;
 import com.tsutsuku.artcollection.utils.GsonUtils;
 import com.tsutsuku.artcollection.utils.SharedPref;
 
@@ -114,6 +115,7 @@ public class MineFansActivity extends BaseActivity {
                 startActivity(new Intent(this,InviteActivity.class));
                 break;
             case R.id.rulesTv:
+                startActivity(new Intent(this, CoinsRulesActivity.class));
                 break;
             case R.id.tvTitleButton:
                 startActivity(new Intent(this, CoinDetailActivity.class));

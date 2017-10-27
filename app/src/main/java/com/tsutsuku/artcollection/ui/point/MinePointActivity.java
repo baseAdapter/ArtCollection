@@ -13,6 +13,7 @@ import com.tsutsuku.artcollection.http.HttpsClient;
 import com.tsutsuku.artcollection.model.CountInfoBean;
 import com.tsutsuku.artcollection.ui.base.BaseActivity;
 import com.tsutsuku.artcollection.ui.exchange.ExchangeCoinActivity;
+import com.tsutsuku.artcollection.ui.exchange.IntegrationRulesActivity;
 import com.tsutsuku.artcollection.ui.mine.IntegrationDetailActivity;
 import com.tsutsuku.artcollection.utils.GsonUtils;
 import com.tsutsuku.artcollection.utils.SharedPref;
@@ -39,6 +40,8 @@ public class MinePointActivity extends BaseActivity {
     TextView tvPoint;
     @BindView(R.id.flExchange)
     FrameLayout flExchange;
+    @BindView(R.id.integrationRules)
+    TextView mIntegrationRules;
 
 
     private List<CountInfoBean> mList = new ArrayList<>();
@@ -112,7 +115,7 @@ public class MinePointActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.exchange_coinsTv, R.id.purchase_offsetTv, R.id.tvTitleButton})
+    @OnClick({R.id.exchange_coinsTv, R.id.purchase_offsetTv, R.id.tvTitleButton,R.id.integrationRules})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.exchange_coinsTv:
@@ -124,6 +127,9 @@ public class MinePointActivity extends BaseActivity {
                 break;
             case R.id.tvTitleButton:
                 startActivity(new Intent(this, IntegrationDetailActivity.class));
+                break;
+            case R.id.integrationRules:
+                startActivity(new Intent(this, IntegrationRulesActivity.class));
                 break;
             default:
                 break;

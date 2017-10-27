@@ -224,36 +224,43 @@
             android:windowSoftInputMode="stateHidden|adjustResize">
 
             <!-- QQ和QQ空间分享 QQ登录的回调必须要配置的 -->
-            <!--<intent-filter>-->
-                <!--<data android:scheme="tencent100371282" />-->
+            <!-- <intent-filter> -->
+            <!-- <data android:scheme="tencent100371282" /> -->
 
-                <!--<action android:name="android.intent.action.VIEW" />-->
 
-                <!--<category android:name="android.intent.category.BROWSABLE" />-->
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
-            <!--</intent-filter>-->
+            <!-- <action android:name="android.intent.action.VIEW" /> -->
+
+
+            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".wxapi.WXEntryActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
-            android:screenOrientation="portrait" />
-
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="cn.sharesdk.tencent.qq.ReceiveActivity"
             android:launchMode="singleTask"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="tencent1106423269" />
             </intent-filter>
         </activity>
 
-        <meta-data android:name="Mob-AppKey" android:value="1106087070"/>
-        <meta-data android:name="Mob-AppSecret" android:value="8kyiGY6p39qFCkTG"/>
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="1106087070" />
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="8kyiGY6p39qFCkTG" />
 
         <!-- ShareSdk end -->
         <activity android:name=".ui.main.ProductSearchActivity" />
@@ -285,9 +292,11 @@
         <activity android:name=".ui.exchange.ExchangeProductDetailActivity" />
         <activity android:name=".ui.exchange.ExchangeStateActivity" />
         <activity android:name=".ui.mine.IntegrationDetailActivity" />
-        <activity android:name=".ui.exchange.ExchangeCoinActivity"></activity>
-        <activity android:name=".ui.exchange.ExchangeSuccessActivity"></activity>
-        <activity android:name=".ui.exchange.ExchangeOrderDetailActivity"></activity>
+        <activity android:name=".ui.exchange.ExchangeCoinActivity" />
+        <activity android:name=".ui.exchange.ExchangeSuccessActivity" />
+        <activity android:name=".ui.exchange.ExchangeOrderDetailActivity" />
+        <activity android:name=".ui.exchange.IntegrationRulesActivity" />
+        <activity android:name=".ui.exchange.CoinsRulesActivity"></activity>
     </application>
 
 </manifest>
