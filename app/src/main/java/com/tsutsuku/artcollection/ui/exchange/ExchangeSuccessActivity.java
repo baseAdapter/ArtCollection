@@ -19,7 +19,7 @@ public class ExchangeSuccessActivity extends BaseActivity {
     @BindView(R.id.order_detail)
     Button mOrderDetailBt;
 
-
+    private ExchangeRecord mRecord;
 
     @Override
     public void setContentView() {
@@ -30,6 +30,9 @@ public class ExchangeSuccessActivity extends BaseActivity {
     public void initViews() {
         ButterKnife.bind(this);
         initTitle(R.string.exchange_success);
+        Intent intent = getIntent();
+        mRecord = (ExchangeRecord) intent.getSerializableExtra("Record.data");
+
 
     }
 
@@ -47,7 +50,9 @@ public class ExchangeSuccessActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.order_detail:
-                startActivity(new Intent(this,ExchangeOrderDetailActivity.class));
+                Intent intent = new Intent(this, ExchangeOrderDetailActivity.class);
+                intent.putExtra("Record.data",mRecord);
+                startActivity(intent);
                 break;
             case R.id.continue_exchange:
                 finish();

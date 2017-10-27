@@ -100,7 +100,6 @@ public class ProductSearchActivity extends BaseActivity {
 
     @Override
     public void initListeners() {
-
     }
 
     @Override

@@ -75,7 +75,7 @@ public class ExchangeRecordAdapter extends RecyclerView.Adapter<ExchangeRecordAd
             public void onClick(View v) {
 
                 Intent intent = new Intent(context, ExchangeOrderDetailActivity.class);
-                intent.putExtra("id", record.getOrderId());
+                intent.putExtra("Record.data", record);
                 context.startActivity(intent);
             }
         });

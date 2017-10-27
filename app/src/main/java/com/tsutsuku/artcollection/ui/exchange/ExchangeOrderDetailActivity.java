@@ -1,5 +1,6 @@
 package com.tsutsuku.artcollection.ui.exchange;
 
+import android.content.Intent;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,7 +27,6 @@ import butterknife.ButterKnife;
 public class ExchangeOrderDetailActivity extends BaseActivity {
     public static final String BASE_ICON_URL = "http://yssc.51urmaker.com/";
 
-
     @BindView(R.id.orderAddressName)
     TextView mOrderAddressName;
     @BindView(R.id.orderAddressMobile)
@@ -52,6 +52,7 @@ public class ExchangeOrderDetailActivity extends BaseActivity {
     @BindView(R.id.disbursements)
     TextView mDisbursements;
 
+    private ExchangeRecord mRecord;
     @Override
     public void setContentView() {
         setContentView(R.layout.activity_exchange_order_detail);
@@ -61,6 +62,8 @@ public class ExchangeOrderDetailActivity extends BaseActivity {
     public void initViews() {
         initTitle(R.string.order_detail);
         ButterKnife.bind(this);
+        Intent intent = getIntent();
+        mRecord = (ExchangeRecord) intent.getSerializableExtra("Record.data");
 
     }
 
@@ -80,7 +83,7 @@ public class ExchangeOrderDetailActivity extends BaseActivity {
         hashMap.put("service", "Gold.orderExDetail");
         hashMap.put("user_id", SharedPref.getString(Constants.USER_ID));
         //请注意
-        hashMap.put("order_id", "2017102548575650");
+        hashMap.put("order_id", mRecord.getOrderId());
         HttpsClient client = new HttpsClient();
         client.post(hashMap, new HttpResponseHandler() {
             @Override

@@ -1,10 +1,12 @@
 package com.tsutsuku.artcollection.ui.exchange;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2017/10/8.
  */
 
-public class ExchangeRecord {
+public class ExchangeRecord implements Serializable{
     /**
      * orderId : 2017102148539799
      * addressId : 1000246

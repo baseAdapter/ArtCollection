@@ -121,6 +121,10 @@ public class ExchangeStateActivity extends BaseActivity {
     ArrayAdapter<String> arrayAdapter;
     List<DeliveryBean> deliveryBeanList;
 
+    /**
+     *对象接受者
+     **/
+    private ExchangeRecord mRecord;
     private Gson gson = new Gson();
     private Type type = new TypeToken<List<ItemAddress>>() {
     }.getType();
@@ -254,7 +258,11 @@ public class ExchangeStateActivity extends BaseActivity {
             protected void onSuccess(int statusCode, JSONObject data) throws Exception {
                 if (data.getInt("code") == 0) {
                     finish();
-                    startActivity(new Intent(ExchangeStateActivity.this, ExchangeSuccessActivity.class));
+                    mRecord = new ExchangeRecord();
+                    mRecord.setOrderId(data.getString("order_id"));
+                    Intent intent = new Intent(ExchangeStateActivity.this, ExchangeSuccessActivity.class);
+                    intent.putExtra("Record.data",mRecord);
+                    startActivity(intent);
                 }
             }
 
