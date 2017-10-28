@@ -75,11 +75,11 @@ public class InviteActivity extends BaseActivity {
                     oks.setText("好友邀请您加入艺术收藏网，今天的艺术品就是明天的古玩。");
 
                     // url仅在微信（包括好友和朋友圈）中使用
-                    oks.setUrl(model.getList().getInvite_url() + model.getCode());
+                    oks.setUrl(model.getList().getInvite_url() + model.getList().getInvite_code());
                     oks.setTitleUrl(model.getList().getInvite_url());//QQ
 
                     // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
-                    oks.setImageUrl("http://qp333com.oss-cn-hangzhou.aliyuncs.com/7peishang.com/avatar/2017-10-26/1982c05ad88f0e58954fa87bfd3fa6e6.jpg?x-oss-process=image/resize,m_mfit,h_210,w_210");//确保SDcard下面存在此张图片
+                    oks.setImageUrl("http://c.hiphotos.baidu.com/image/pic/item/d000baa1cd11728be518a314c2fcc3cec3fd2cca.jpg");//确保SDcard下面存在此张图片
 
                     // 启动分享GUI
                     oks.show(getApplicationContext());
