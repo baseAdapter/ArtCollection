@@ -6,6 +6,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.tsutsuku.artcollection.R;
 import com.tsutsuku.artcollection.common.Constants;
@@ -15,6 +16,7 @@ import com.tsutsuku.artcollection.model.ExchangeBean;
 import com.tsutsuku.artcollection.ui.base.BaseActivity;
 import com.tsutsuku.artcollection.ui.exchange.ExchangeAdapter;
 import com.tsutsuku.artcollection.ui.exchange.ExchangeProductDetailActivity;
+import com.tsutsuku.artcollection.ui.exchange.MallRulesActivity;
 import com.tsutsuku.artcollection.ui.utils.OnRecyclerViewListener;
 import com.tsutsuku.artcollection.utils.DensityUtils;
 import com.tsutsuku.artcollection.utils.GsonUtils;
@@ -36,6 +38,8 @@ public class ExchangeMallActivity extends BaseActivity implements OnRecyclerView
     public static final String TAG = ExchangeMallActivity.class.getSimpleName();
     @BindView(R.id.rvBase)
     RecyclerView mRvBase;
+    @BindView(R.id.tvDetail)
+    TextView mDetailTv;
 
     private List<ExchangeBean> mList = new ArrayList<>();
     private List<String> mImageList = new ArrayList<>();
@@ -131,7 +135,7 @@ public class ExchangeMallActivity extends BaseActivity implements OnRecyclerView
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tvDetail:
-
+                startActivity(new Intent(this, MallRulesActivity.class));
                 break;
         }
     }

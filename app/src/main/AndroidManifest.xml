@@ -296,7 +296,8 @@
         <activity android:name=".ui.exchange.ExchangeSuccessActivity" />
         <activity android:name=".ui.exchange.ExchangeOrderDetailActivity" />
         <activity android:name=".ui.exchange.IntegrationRulesActivity" />
-        <activity android:name=".ui.exchange.CoinsRulesActivity"></activity>
+        <activity android:name=".ui.exchange.CoinsRulesActivity" />
+        <activity android:name=".ui.exchange.MallRulesActivity"></activity>
     </application>
 
 </manifest>

@@ -42,7 +42,7 @@ public class ExchangeProductDetailActivity extends BaseActivity {
     ImageView mDetailCollect;
     @BindView(R.id.detailShare)
     ImageView mDetailShare;
-    @BindView(R.id.detail_nameTv)
+    @BindView(R.id.detailNameTv)
     TextView mDetailName;
     /**
      * 兑换产品所需的金币数
@@ -89,7 +89,6 @@ public class ExchangeProductDetailActivity extends BaseActivity {
     @Override
     public void initViews() {
         ButterKnife.bind(this);
-
         mBean = (ExchangeBean) getIntent().getSerializableExtra("ExchangeBean.data");
 
     }

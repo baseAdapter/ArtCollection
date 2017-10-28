@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import com.tsutsuku.artcollection.R;
 import com.tsutsuku.artcollection.ui.base.BaseActivity;
+import com.tsutsuku.artcollection.ui.main.MainActivity;
 import com.tsutsuku.artcollection.ui.shoppingBase.OrderDetailActivity;
 
 import butterknife.BindView;
@@ -56,6 +57,7 @@ public class ExchangeSuccessActivity extends BaseActivity {
                 break;
             case R.id.continue_exchange:
                 finish();
+                startActivity(new Intent(this, MainActivity.class));
                 break;
         }
     }

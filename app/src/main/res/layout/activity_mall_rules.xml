@@ -7,11 +7,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/tv_bg"
-    tools:context="com.tsutsuku.artcollection.ui.exchange.CoinsRulesActivity">
+    tools:context="com.tsutsuku.artcollection.ui.exchange.MallRulesActivity">
 
     <include layout="@layout/base_title"/>
     <TextView
-        android:id="@+id/goldCoinRules"
+        android:id="@+id/mallRulesTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"/>

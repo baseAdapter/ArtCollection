@@ -27,6 +27,7 @@ public class CoinsRulesActivity extends BaseActivity {
 
     @Override
     public void initViews() {
+        initTitle(R.string.coin_rules);
         ButterKnife.bind(this);
 
     }

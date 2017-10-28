@@ -57,6 +57,7 @@
     <string name="purchase_offset">购买抵现</string>
     <string name="exchange_mall">兑换商城</string>
     <string name="integration_detail">积分明细</string>
+    <string name="integration_rules">积分规则</string>
     <string name="coin_detail">金币明细</string>
     <string name="exchange_record">兑换记录</string>
     <string name="exchange_address">收货地址</string>

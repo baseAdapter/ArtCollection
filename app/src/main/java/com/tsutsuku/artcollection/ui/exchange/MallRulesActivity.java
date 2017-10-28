@@ -14,19 +14,19 @@ import java.io.InputStream;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class IntegrationRulesActivity extends BaseActivity {
-    @BindView(R.id.integrationRulesTv)
-    TextView mIntegrationRulesTv;
+public class MallRulesActivity extends BaseActivity {
+    @BindView(R.id.mallRulesTv)
+    TextView mallRulesTv;
 
     private XmlPaser xmlPaser = new XmlPaser();
     @Override
     public void setContentView() {
-        setContentView(R.layout.activity_integration_rules);
+        setContentView(R.layout.activity_mall_rules);
     }
 
     @Override
     public void initViews() {
-        initTitle(R.string.integration_rules);
+        initTitle(R.string.exchange_rules);
         ButterKnife.bind(this);
     }
 
@@ -38,11 +38,12 @@ public class IntegrationRulesActivity extends BaseActivity {
     @Override
     public void initData() {
         try {
-            InputStream inputStream = this.getResources().getAssets().open("Integration.xml");
-            xmlPaser.doPaserd(mIntegrationRulesTv, inputStream);
+            InputStream inputStream = this.getResources().getAssets().open("MallRules.xml");
+            xmlPaser.doPaserd(mallRulesTv, inputStream);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
     }
 }
