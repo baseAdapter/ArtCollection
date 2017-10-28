@@ -14,6 +14,7 @@ import com.tsutsuku.artcollection.ui.exchange.IntegrationDetail;
 import com.tsutsuku.artcollection.ui.exchange.IntegrationDetailAdapter;
 import com.tsutsuku.artcollection.utils.GsonUtils;
 import com.tsutsuku.artcollection.utils.SharedPref;
+import com.tsutsuku.artcollection.utils.ToastUtils;
 
 import org.json.JSONObject;
 
@@ -74,6 +75,8 @@ public class IntegrationDetailActivity extends BaseActivity {
                 Log.i(TAG,"onSuccess----" + mList.size());
                 if (mList.size() !=0 ) {
                     mAdapter.update(mList);
+                }else {
+                    ToastUtils.showMessage("暂无积分明细信息");
                 }
             }
 

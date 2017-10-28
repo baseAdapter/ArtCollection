@@ -24,6 +24,8 @@
             android:layout_marginBottom="60dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:typeface="sans"
+            android:text="6枚"
             android:background="@null" />
     </RelativeLayout>
 

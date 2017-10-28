@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/tv_bg"
     tools:context="com.tsutsuku.artcollection.ui.exchange.ExchangeOrderDetailActivity">
 
     <include layout="@layout/base_title"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/tv_bg">
 
         <TextView
             android:id="@+id/orderAddressName"
@@ -52,7 +52,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp">
+        android:layout_marginTop="1dp"
+        android:background="@color/tv_bg">
         <ImageView
             android:id="@+id/order_icon_product"
             android:layout_width="99dp"
@@ -100,7 +101,8 @@
     </View>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/tv_bg">
         <TextView
             android:id="@+id/text4"
             android:layout_width="wrap_content"
@@ -128,7 +130,8 @@
     </View>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/tv_bg">
 
         <TextView
             android:id="@+id/order_id"
@@ -142,7 +145,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="11dp"
-            android:layout_below="@+id/order_id"/>
+            android:layout_below="@+id/order_id"
+            android:layout_marginBottom="10dp"/>
 
 
 

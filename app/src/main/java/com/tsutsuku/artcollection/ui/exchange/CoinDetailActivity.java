@@ -70,6 +70,7 @@ public class CoinDetailActivity extends BaseActivity {
         HashMap<String , String> hashMap = new HashMap<>();
         hashMap.put("service","Gold.getDetail");
         hashMap.put("user_id", SharedPref.getString(Constants.USER_ID));
+        hashMap.put("type","1");
         HttpsClient client = new HttpsClient();
         client.post(hashMap, new HttpResponseHandler() {
             @Override

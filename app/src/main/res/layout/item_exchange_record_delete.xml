@@ -2,7 +2,8 @@
 <com.tsutsuku.artcollection.view.SwipeMenuLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/tv_bg">
 
     <RelativeLayout
         android:id="@+id/rl_item"
@@ -64,8 +65,7 @@
             android:layout_toRightOf="@+id/record_icon"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="75dp"
-            android:text="无谓的伟大"
-            android:textSize="10sp" />
+            android:textSize="12sp" />
 
         <View
             android:layout_width="match_parent"

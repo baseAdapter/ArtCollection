@@ -3,13 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tsutsuku.artcollection.ui.exchange.ExchangeRecordActivity"
-    android:background="@color/tv_bg">
+    tools:context="com.tsutsuku.artcollection.ui.exchange.ExchangeRecordActivity">
 
     <include layout="@layout/base_title_tv"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/background"
+        android:layout_alignTop="@+id/rvBase"/>
 
     <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="41dp"
         android:id="@+id/rvBase"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

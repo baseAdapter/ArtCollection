@@ -2,6 +2,7 @@ package com.tsutsuku.artcollection.ui.exchange;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -134,6 +135,7 @@ public class ExchangeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 itemHolder.itemView.setTag(position - 1);
                 ExchangeBean data = mData.get(position - 1);
                 itemHolder.priceText.setText(data.getNeed_gold() + "金币");
+                itemHolder.priceText.setTextColor(Color.parseColor("#ea8c28"));
                 itemHolder.nameText.setText(data.getName());
                 Glide.with(context).load(data.getCoverPhoto()).into(itemHolder.itemImageView);
                 holder.itemView.setOnClickListener(new View.OnClickListener() {

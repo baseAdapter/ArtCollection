@@ -14,6 +14,7 @@ import com.tsutsuku.artcollection.model.CountInfoBean;
 import com.tsutsuku.artcollection.ui.base.BaseActivity;
 import com.tsutsuku.artcollection.ui.exchange.ExchangeCoinActivity;
 import com.tsutsuku.artcollection.ui.exchange.IntegrationRulesActivity;
+import com.tsutsuku.artcollection.ui.main.ProductSearchActivity;
 import com.tsutsuku.artcollection.ui.mine.IntegrationDetailActivity;
 import com.tsutsuku.artcollection.utils.GsonUtils;
 import com.tsutsuku.artcollection.utils.SharedPref;
@@ -123,7 +124,7 @@ public class MinePointActivity extends BaseActivity {
                 startActivity(intent);
                 break;
             case R.id.purchase_offsetTv:
-                ToastUtils.showMessage("该功能尚未开通!");
+                startActivity(new Intent(this, ProductSearchActivity.class));
                 break;
             case R.id.tvTitleButton:
                 startActivity(new Intent(this, IntegrationDetailActivity.class));
