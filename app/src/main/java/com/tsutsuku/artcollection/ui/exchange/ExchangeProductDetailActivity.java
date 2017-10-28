@@ -243,7 +243,7 @@ public class ExchangeProductDetailActivity extends BaseActivity {
                     for (int i = 0; i < list.size(); i++) {
                         itemAddress = list.get(i);
                     }
-                        if (Integer.parseInt(itemAddress.getIsDefault()) == 0) {
+                        if (list.size() == 0) {
                             dialogShow();
                         }else {
                             Intent intent = new Intent(getApplicationContext(), ExchangeStateActivity.class);
@@ -275,7 +275,7 @@ public class ExchangeProductDetailActivity extends BaseActivity {
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                finish();
+
             }
         });
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {

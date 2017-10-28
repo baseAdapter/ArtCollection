@@ -75,7 +75,7 @@ public class InviteActivity extends BaseActivity {
                     oks.setText("艺术收藏网邀请好友送1000现金积分啦");
 
                     // url仅在微信（包括好友和朋友圈）中使用
-                    oks.setUrl(model.getList().getInvite_url());
+                    oks.setUrl(model.getList().getInvite_url() + model.getCode());
                     oks.setTitleUrl(model.getList().getInvite_url());//QQ
 
                     // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数

@@ -125,10 +125,8 @@ public class ExchangeStateActivity extends BaseActivity {
      *对象接受者
      **/
     private ExchangeRecord mRecord;
-    private Gson gson = new Gson();
-    private Type type = new TypeToken<List<ItemAddress>>() {
-    }.getType();
 
+    private boolean delivery;
 
     @Override
     public void setContentView() {
@@ -140,7 +138,6 @@ public class ExchangeStateActivity extends BaseActivity {
         ButterKnife.bind(this);
         initTitle(R.string.sure_order);
         mBean = (ExchangeBean) getIntent().getSerializableExtra("ExchangeBean.data");
-
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
     }
 
@@ -181,12 +178,13 @@ public class ExchangeStateActivity extends BaseActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         mDeliveryBean = deliveryBeanList.get(which);
-                        mDeliveryWay.setText(mDeliveryBean.getDeliveryName() + ">");
+                        mDeliveryWay.setText(mDeliveryBean.getDeliveryName());
                     }
                 }).show();
 
                 break;
             case R.id.submitOrder:
+                getDefaultAddress();
                 if (mItemAddress != null) {
                     checkUserOrder();
                 } else
@@ -227,7 +225,7 @@ public class ExchangeStateActivity extends BaseActivity {
                     for (DeliveryBean deliveryBean : deliveryBeanList) {
                         arrayAdapter.add(deliveryBean.getDeliveryName());
                     }
-                    mDeliveryWay.setText(mDeliveryBean.getDeliveryName() + ">");
+                    mDeliveryWay.setText("");
                 }
             }
 
