@@ -2,6 +2,7 @@ package com.tsutsuku.artcollection.ui.login;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -31,6 +32,8 @@ import butterknife.OnClick;
 public class RegisterActivity extends BaseActivity implements RegisterContract.View {
 
 
+    @BindView(R.id.etInvitePassword)
+    EditText etInviteCode;
     @BindView(R.id.etNickname)
     EditText etNickname;
     @BindView(R.id.etAccount)
@@ -90,6 +93,7 @@ public class RegisterActivity extends BaseActivity implements RegisterContract.V
 
     @Override
     public void registerSuccess() {
+        Log.e(TAG, "registerSuccess: ");
         Intent intent = new Intent();
         intent.putExtra(Intents.ACCOUNT,"");
         intent.putExtra(Intents.PASSWORD,"");
@@ -115,6 +119,7 @@ public class RegisterActivity extends BaseActivity implements RegisterContract.V
                         etAccount.getText().toString(),
                         etPassword.getText().toString(),
                         etCaptcha.getText().toString(),
+                        etInviteCode.getText().toString(),
                         cbAgree.isChecked());
             }
                 break;

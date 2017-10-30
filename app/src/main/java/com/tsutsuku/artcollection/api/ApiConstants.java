@@ -15,6 +15,8 @@ public class ApiConstants {
     public static final class Api {
         private static final String DEBUG_HOST = "http://ysscapi.51urmaker.com/v1_1/";
 
+        public static final String HOST_URL = "http://120.27.220.26/ysscapi.51urmaker.com/Public/v1_1/";
+
         public static String HOST = DEBUG_HOST;
 
         public static final String KEY = "yssc7d3c64545245457bfe9693282c75e2ef795d3";

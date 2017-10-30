@@ -33,6 +33,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.sharesdk.onekeyshare.OnekeyShare;
 
 public class ExchangeProductDetailActivity extends BaseActivity {
 
@@ -184,24 +185,7 @@ public class ExchangeProductDetailActivity extends BaseActivity {
                 // getCollectionInfo();
                 break;
             case R.id.detailShare:
-//                OnekeyShare oks = new OnekeyShare();
-//                //关闭sso授权
-//                oks.disableSSOWhenAuthorize();
-//
-//                // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间等使用
-//                oks.setTitle(mBean.getName().length() > 30 ? mBean.getName().substring(0, 29) : mBean.getName());
-//                // text是分享文本，所有平台都需要这个字段
-//                oks.setText(mBean.getDesc().length() > 40 ? model.getBody().getDescription().substring(0, 39) : model.getBody().getDescription());
-//
-//                // url仅在微信（包括好友和朋友圈）中使用
-//                oks.setUrl(model.getBody().getUrl());
-//                oks.setTitleUrl(model.getBody().getUrl());//QQ
-//
-//                // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
-//                oks.setImageUrl(model.getBody().getImage());//确保SDcard下面存在此张图片
-//
-//                // 启动分享GUI
-//                oks.show(getActivity());
+                oneKeyShare();
 
                 break;
             case R.id.minusBt:
@@ -222,6 +206,27 @@ public class ExchangeProductDetailActivity extends BaseActivity {
                 break;
         }
 
+    }
+
+    private void oneKeyShare() {
+        OnekeyShare oks = new OnekeyShare();
+        //关闭sso授权
+        oks.disableSSOWhenAuthorize();
+
+        // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间等使用
+        oks.setTitle("艺术收藏网");
+        // text是分享文本，所有平台都需要这个字段
+        oks.setText(mBean.getName());
+
+        // url仅在微信（包括好友和朋友圈）中使用
+        oks.setUrl(mBean.getCoverPhoto());
+        oks.setTitleUrl("http://c.hiphotos.baidu.com/image/pic/item/d000baa1cd11728be518a314c2fcc3cec3fd2cca.jpg");//QQ
+
+        // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+        oks.setImageUrl("http://c.hiphotos.baidu.com/image/pic/item/d000baa1cd11728be518a314c2fcc3cec3fd2cca.jpg");//确保SDcard下面存在此张图片
+
+        // 启动分享GUI
+        oks.show(this);
     }
 
     /**

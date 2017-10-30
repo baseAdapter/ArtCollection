@@ -148,6 +148,12 @@ public class ExchangeStateActivity extends BaseActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        getDefaultAddress();
+    }
+
+    @Override
     public void initData() {
         mProductName.setText(mBean.getName());
         exchangeNumber = getIntent().getExtras().get("ExchangeNumber").toString();
@@ -159,7 +165,6 @@ public class ExchangeStateActivity extends BaseActivity {
         mNeedCoin.setText(price + "金币");
         mUserCoins.setText(num * price + "金币");
         Glide.with(this).load(mBean.getCoverPhoto()).into(mIconProduct);
-        getDefaultAddress();
         getDeliveryWay();
     }
 
@@ -272,6 +277,32 @@ public class ExchangeStateActivity extends BaseActivity {
 
     }
 
+
+    /**
+     * 提醒框弹出
+     **/
+    private void dialogShow() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("去添加默认地址?");
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(getBaseContext(), ShoppingAddressActivity.class);
+                startActivity(intent);
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+
+
     /**
      * 请求接口：address.get
      * 根据默认地址的变化随时更新数据
@@ -286,12 +317,20 @@ public class ExchangeStateActivity extends BaseActivity {
             protected void onSuccess(int statusCode, JSONObject data) throws Exception {
                 if (data.getInt("code") == 0) {
                     List<ItemAddress> list = GsonUtils.parseJsonArray(data.getString("list"), ItemAddress.class);
+                    if (list.size() == 0){
+                        clearAddress();
+                        dialogShow();
+                        return;
+                    }
                     for (int i = 0; i < list.size(); i++) {
                         if (Integer.parseInt(list.get(i).getIsDefault()) == 1) {
                             mItemAddress = list.get(i);
                             setAddressData(mItemAddress);
                         }
                     }
+                }else {
+                    clearAddress();
+                    dialogShow();
                 }
             }
 
@@ -312,5 +351,11 @@ public class ExchangeStateActivity extends BaseActivity {
         mAddressName.setText("收货人: " + itemAddress.getConsigneeName());
         mAddressMobile.setText(itemAddress.getContactNumber());
         mAddressTv.setText("收货地址： " + itemAddress.getProvince() + itemAddress.getCity() + itemAddress.getCounty());
+    }
+
+    private void clearAddress() {
+        mAddressName.setText("");
+        mAddressMobile.setText("");
+        mAddressTv.setText("");
     }
 }

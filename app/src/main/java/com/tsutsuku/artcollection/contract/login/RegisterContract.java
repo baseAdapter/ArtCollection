@@ -15,12 +15,9 @@ public class RegisterContract {
     }
 
     public interface Presenter extends BasePresenter<View> {
-        void register(String nickname,String account, String password, String captcha, boolean agree);
+        void register(String nickname,String account, String password, String captcha, String inviteCode, boolean agree);
 
         void getCaptcha(String account);
-    }
-
-    public interface Model {
     }
 
 

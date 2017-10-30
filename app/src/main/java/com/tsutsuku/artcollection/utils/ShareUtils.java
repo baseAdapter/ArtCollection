@@ -51,7 +51,7 @@ public class ShareUtils {
         oks.setText(content);
         oks.setSite("艺术收藏网");
 //        oks.setSiteUrl(outLinkUrl);
-////        oks.setImageUrl(imageUrl);
+//        oks.setImageUrl(imageUrl);
 //        oks.setImagePath("/sdcard/test-pic.jpg");  //分享sdcard目录下的图片
 //        oks.setUrl(outLinkUrl); //微信不绕过审核分享链接
 //        oks.setVenueName("ShareSDK");

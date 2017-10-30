@@ -2,6 +2,7 @@ package com.tsutsuku.artcollection.presenter.login;
 
 import android.os.Handler;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.tsutsuku.artcollection.R;
 import com.tsutsuku.artcollection.contract.login.RegisterContract;
@@ -32,6 +33,9 @@ public class RegisterPresenterImpl implements RegisterContract.Presenter {
         @Override
         public void run() {
             seconds--;
+            if (registerView == null) {
+                return;
+            }
             registerView.setCaptchaTime(seconds);
             handler.postDelayed(this, 1000);
             if (seconds <= 0) {
@@ -51,7 +55,7 @@ public class RegisterPresenterImpl implements RegisterContract.Presenter {
     }
 
     @Override
-    public void register(String nickname,String account, String password, String captcha, boolean agree) {
+    public void register(String nickname,String account, String password, String captcha, String inviteCode, boolean agree) {
         if (TextUtils.isEmpty(nickname)){
             ToastUtils.showMessage("请输入您的昵称");
         } else if (TextUtils.isEmpty(account)){
@@ -67,7 +71,7 @@ public class RegisterPresenterImpl implements RegisterContract.Presenter {
         } else if (!agree){
             ToastUtils.showMessage(R.string.please_read_and_agree);
         } else {
-            registerImpl(nickname,account, password, captcha);
+            registerImpl(nickname,account, password, captcha, inviteCode);
         }
     }
 
@@ -105,21 +109,26 @@ public class RegisterPresenterImpl implements RegisterContract.Presenter {
         });
     }
 
-    private void registerImpl(String nickname,String account, final String password, String captcha) {
+    private void registerImpl(String nickname,String account, final String password, String captcha,String inviteCode) {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("service", "User.register");
         hashMap.put("mobile", account);
         hashMap.put("password", EncryptUtils.md5(password));
         hashMap.put("token", captcha);
         hashMap.put("nickname", nickname);
+        hashMap.put("inviteCode",inviteCode);
         HttpsClient client = new HttpsClient();
         client.post(hashMap, new HttpResponseHandler() {
             @Override
             protected void onSuccess(int statusCode, JSONObject data) throws Exception {
+                Log.e("TAG", "onSuccess: "+data.toString() );
                 if (data.getInt("code") == 0) {
+                    Log.e("TAG", "onSuccess: ");
+
                     SysUtils.saveUserInfo(data.getString("info"));
-                    SysUtils.loginIM(data.getJSONObject("hxAccount").getString("username"), password);
+                    SysUtils.loginIM(data.getJSONObject("info").getJSONObject("hxAccount").getString("username"), password);
                     registerView.registerSuccess();
+                    Log.e("TAG", "onSuccess:222222222222222222 ");
                 }
             }
 
