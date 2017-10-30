@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.tsutsuku.artcollection.R;
 import com.tsutsuku.artcollection.model.ExchangeBean;
 import com.tsutsuku.artcollection.ui.mine.ExchangeMallActivity;
+import com.tsutsuku.artcollection.ui.mine.MineFansActivity;
 import com.tsutsuku.artcollection.ui.point.MinePointActivity;
 import com.tsutsuku.artcollection.ui.shoppingBase.ShoppingAddressActivity;
 import com.tsutsuku.artcollection.ui.utils.OnRecyclerViewListener;
@@ -79,7 +80,7 @@ public class ExchangeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 headViewHolder.goldCoinExchangeLay.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(context, MinePointActivity.class);
+                        Intent intent = new Intent(context, MineFansActivity.class);
                         context.startActivity(intent);
                     }
                 });
@@ -161,6 +162,7 @@ public class ExchangeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     public class HeaderViewHolder extends RecyclerView.ViewHolder {
         public LinearLayout goldCoinExchangeLay, recordExchangeLay, addressExchangeLay;
+
         public Banner banner;
 
         public HeaderViewHolder(View view) {

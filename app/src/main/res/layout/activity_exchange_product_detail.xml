@@ -42,7 +42,7 @@
                 android:layout_alignParentBottom="true"
                 android:background="@color/d" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -50,33 +50,31 @@
                 android:layout_marginTop="10dp">
                 <TextView
                     android:id="@+id/detailNameTv"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4"
                     android:maxEms="12"
                     android:maxLines="1"
                     android:ellipsize="end"
-                    android:text="@string/test_product"
                     android:layout_marginLeft="10dp"
                     android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/detailCollect"
-                    android:layout_width="0dp"
+                    android:layout_toLeftOf="@+id/detailShare"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/icon_collect"
-                    android:layout_weight="1"
                     android:layout_marginLeft="180dp"/>
                 <ImageView
                     android:id="@+id/detailShare"
-                    android:layout_width="0dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:src="@drawable/icon_share"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="10dp"/>
 
-            </LinearLayout>
+            </RelativeLayout>
             <TextView
                 android:id="@+id/ExchangeCoin"
                 android:layout_width="wrap_content"

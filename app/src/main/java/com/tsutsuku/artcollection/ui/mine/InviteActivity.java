@@ -31,6 +31,10 @@ public class InviteActivity extends BaseActivity {
     Button mInviteBt;
     @BindView(R.id.tv_activity_detail)
     TextView mDetailTv;
+    @BindView(R.id.personNum)
+    TextView mPersonNum;
+    @BindView(R.id.coinNum)
+    TextView mCoinNum;
 
     Gson gson;
     @Override
