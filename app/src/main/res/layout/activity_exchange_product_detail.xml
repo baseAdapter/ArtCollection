@@ -20,6 +20,11 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+                <com.youth.banner.Banner
+                    android:id="@+id/bannerPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="312dp">
+                </com.youth.banner.Banner>
                 <ImageView
                     android:id="@+id/back_Img"
                     android:layout_width="25dp"
@@ -28,12 +33,7 @@
                     android:layout_marginTop="12dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="12dp"
-                    android:src="@drawable/icon_arrowback_default"/>
-                <com.youth.banner.Banner
-                    android:id="@+id/bannerPager"
-                    android:layout_width="match_parent"
-                    android:layout_height="312dp">
-                </com.youth.banner.Banner>
+                    android:src="@drawable/icon_arrowback_default" />
             </RelativeLayout>
 
             <View
@@ -102,7 +102,7 @@
                 <TextView
                     android:id="@+id/minusBt"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20dp"
                     android:layout_gravity="center_vertical"
                     android:gravity="center_horizontal"
                     android:layout_marginLeft="6dp"
@@ -111,7 +111,7 @@
                 <TextView
                     android:id="@+id/numberBt"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20dp"
                     android:gravity="center_horizontal"
                     android:background="@drawable/img_box"
                     android:layout_gravity="center_vertical"
@@ -121,7 +121,7 @@
                 <TextView
                     android:id="@+id/plusBt"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20dp"
                     android:gravity="center_horizontal"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/icon_plus"/>

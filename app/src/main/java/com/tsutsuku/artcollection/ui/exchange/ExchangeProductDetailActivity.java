@@ -170,7 +170,7 @@ public class ExchangeProductDetailActivity extends BaseActivity {
         });
     }
 
-    @OnClick({R.id.detailCollect, R.id.detailShare, R.id.minusBt, R.id.plusBt, R.id.exchangeRight})
+    @OnClick({R.id.back_Img,R.id.detailCollect, R.id.detailShare, R.id.minusBt, R.id.plusBt, R.id.exchangeRight})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.back_Img:

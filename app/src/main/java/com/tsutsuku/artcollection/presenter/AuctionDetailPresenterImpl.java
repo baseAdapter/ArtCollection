@@ -27,6 +27,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import cn.sharesdk.onekeyshare.OnekeyShare;
+
 /**
  * Created by sunrenwei on 2017/02/20
  */
@@ -151,7 +153,8 @@ public class AuctionDetailPresenterImpl implements AuctionDetailContract.Present
 
     @Override
     public void share() {
-        ShareUtils.showShare(context, infoBean.getCover(), infoBean.getProductName(), SharedPref.getSysString(Constants.Share.AUCTION) + productId);
+//        ShareUtils.showShare(context, infoBean.getCover(), infoBean.getProductName(), SharedPref.getSysString(Constants.Share.AUCTION) + productId);
+        oneKeyShare();
     }
 
     @Override
@@ -181,5 +184,25 @@ public class AuctionDetailPresenterImpl implements AuctionDetailContract.Present
 
             }
         });
+    }
+    private void oneKeyShare() {
+        OnekeyShare oks = new OnekeyShare();
+        //关闭sso授权
+        oks.disableSSOWhenAuthorize();
+
+        // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间等使用
+        oks.setTitle("艺术收藏网");
+        // text是分享文本，所有平台都需要这个字段
+        oks.setText(infoBean.getProductName());
+
+        // url仅在微信（包括好友和朋友圈）中使用
+        oks.setUrl(infoBean.getFarmCover());
+        oks.setTitleUrl("http://c.hiphotos.baidu.com/image/pic/item/d000baa1cd11728be518a314c2fcc3cec3fd2cca.jpg");//QQ
+
+        // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+        oks.setImageUrl("http://c.hiphotos.baidu.com/image/pic/item/d000baa1cd11728be518a314c2fcc3cec3fd2cca.jpg");//确保SDcard下面存在此张图片
+
+        // 启动分享GUI
+        oks.show(context);
     }
 }
