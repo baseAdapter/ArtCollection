@@ -9,6 +9,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -99,6 +100,8 @@ public class MainActivity extends BaseFragmentActivity {
     public void setContentView() {
         setContentView(R.layout.activity_main);
     }
+
+
 
     @Override
     public void initViews() {

@@ -52,7 +52,7 @@ public class HttpsClient {
     }
 
     public void post(HashMap<String, String> hashMap, final HttpResponseHandler handler) {
-        post(ApiConstants.Api.HOST_URL, hashMap, handler);
+        post(ApiConstants.Api.HOST, hashMap, handler);
     }
 
     /**

@@ -230,7 +230,7 @@ public class ExchangeStateActivity extends BaseActivity {
                     for (DeliveryBean deliveryBean : deliveryBeanList) {
                         arrayAdapter.add(deliveryBean.getDeliveryName());
                     }
-                    mDeliveryWay.setText("");
+                    mDeliveryWay.setText(">");
                 }
             }
 
