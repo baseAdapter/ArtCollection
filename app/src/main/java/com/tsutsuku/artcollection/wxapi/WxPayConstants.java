@@ -6,7 +6,7 @@ package com.tsutsuku.artcollection.wxapi;
  * @Description 微信支付常量
  */
 public class WxPayConstants {
-    public static final String WXAPP_ID = "wx6c87c850a6789e1b";
+    public static final String WXAPP_ID = "wx07639c69c0192c57";
 
     public static final String PAY_CANCEL = "取消支付";
 
