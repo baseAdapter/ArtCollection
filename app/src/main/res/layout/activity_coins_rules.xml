@@ -8,13 +8,25 @@
     android:orientation="vertical"
     android:background="@color/tv_bg"
     tools:context="com.tsutsuku.artcollection.ui.exchange.CoinsRulesActivity">
-
     <include layout="@layout/base_title"/>
-    <TextView
-        android:id="@+id/goldCoinRules"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:textSize="16sp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/goldCoinRules"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </LinearLayout>

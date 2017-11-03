@@ -6,147 +6,145 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/view_gray"
     tools:context="com.tsutsuku.artcollection.ui.exchange.ExchangeOrderDetailActivity">
 
     <include layout="@layout/base_title"/>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/tv_bg">
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:background="@color/view_background">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/orderAddressName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/orderAddressName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="20dp"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/orderAddressMobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/orderAddressName"
+                android:layout_marginLeft="60dp"
+                android:layout_toRightOf="@+id/orderAddressName"
+                android:textSize="13sp" />
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/orderAddressMobile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/orderAddressName"
-            android:layout_marginLeft="60dp"
-            android:layout_toRightOf="@+id/orderAddressName"
-            android:textSize="13sp" />
+
 
         <TextView
             android:id="@+id/orderAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/orderAddressName"
+            android:layout_alignParentBottom="true"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="15dp"
             android:layout_marginTop="22dp"
             android:textSize="14sp" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/c">
-    </View>
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
-        android:background="@color/tv_bg">
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:paddingLeft="15dp"
+        android:background="@color/view_background">
         <ImageView
             android:id="@+id/order_icon_product"
             android:layout_width="99dp"
             android:layout_height="99dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginBottom="14dp"/>
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"/>
 
         <TextView
             android:id="@+id/order_product_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/order_icon_product"
+            android:layout_toRightOf="@id/order_icon_product"
             android:maxEms="13"
-            android:lines="2"
-            android:layout_marginTop="34dp"
-            android:layout_marginLeft="15dp"
+            android:maxLines="2"
+            android:layout_alignTop="@id/order_icon_product"
+            android:layout_marginTop="20dp"
             android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/order_product_need_coin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/order_product_name"
-            android:layout_toRightOf="@+id/order_icon_product"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="20dp"
-            android:text="100积分"/>
+            android:layout_toRightOf="@id/order_icon_product"
+            android:layout_marginBottom="20dp"
+            android:layout_alignBottom="@id/order_icon_product"
+            android:textSize="13sp" />
 
         <TextView
             android:id="@+id/order_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_alignBaseline="@+id/order_product_name"
+            android:layout_alignBaseline="@id/order_product_name"
             android:layout_marginLeft="133dp"
             android:layout_marginRight="20dp"
             android:text="x 1"/>
 
     </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/c">
-    </View>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/tv_bg">
+        android:background="@color/view_background"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="20dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp">
         <TextView
             android:id="@+id/text4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:text="实付款"
             android:textSize="14sp"
-            android:layout_marginTop="13dp"
-            android:layout_marginBottom="12dp"/>
+            />
 
         <TextView
             android:id="@+id/disbursements"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/text4"
+            android:layout_alignBaseline="@id/text4"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
+            android:textColor="@color/orange"
             android:textSize="14sp"/>
 
     </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/c">
-    </View>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/tv_bg">
+        android:background="@color/view_background"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="14dp">
 
         <TextView
             android:id="@+id/order_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="14dp"/>
+            android:layout_marginTop="14dp"
+            android:textSize="12sp"/>
         <TextView
             android:id="@+id/order_create_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:layout_marginTop="11dp"
-            android:layout_below="@+id/order_id"
-            android:layout_marginBottom="10dp"/>
+            android:layout_below="@id/order_id"
+            android:textSize="12sp"/>
 
 
 

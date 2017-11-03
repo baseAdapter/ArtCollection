@@ -43,11 +43,6 @@ public class CoinDetailActivity extends BaseActivity {
         initTitle(R.string.coin_detail);
         ButterKnife.bind(this);
         mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
-        mRvBase.addItemDecoration(new ItemOffsetDecoration(DensityUtils.dp2px(3)));
-        mRvBase.addItemDecoration(new HorizontalDividerItemDecoration.Builder(context)
-                .size(DensityUtils.dp2px(3))
-                .colorResId(R.color.transparent)
-                .build());
 
     }
 

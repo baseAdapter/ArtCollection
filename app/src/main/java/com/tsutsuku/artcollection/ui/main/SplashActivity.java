@@ -78,7 +78,7 @@ public class SplashActivity extends Activity {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("service", "Update.checkAppUpdate");
         hashMap.put("client_version", BuildConfig.VERSION_NAME);
-        hashMap.put("client_type", 1 + "");
+        hashMap.put("client_type", 0 + "");
         HttpsClient client = new HttpsClient();
         client.post(hashMap, new HttpResponseHandler() {
             @Override
