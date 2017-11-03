@@ -31,6 +31,7 @@ import java.util.HashMap;
 public class SplashActivity extends Activity {
     private Context context;
     Gson gson;
+    CheckUpModel info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +49,6 @@ public class SplashActivity extends Activity {
                 }
                 SysUtils.getCateMore();
                 getData();
-
-                finish();
             }
         }, 2000);
 
@@ -60,7 +59,11 @@ public class SplashActivity extends Activity {
             switch (msg.what) {
                 case -2: {
                     ToastUtils.showMessage("下载失败，请检查网络");
-                    MainActivity.launch(context);
+                    if ("1".equals(info.getInfo().getStatus())) {
+                        MainActivity.launch(context);
+                    } else {
+                        finish();
+                    }
                     return;
                 }
                 case 1:
@@ -78,19 +81,20 @@ public class SplashActivity extends Activity {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("service", "Update.checkAppUpdate");
         hashMap.put("client_version", BuildConfig.VERSION_NAME);
-        hashMap.put("client_type", 1 + "");
+        hashMap.put("client_type", 0 + "");
         HttpsClient client = new HttpsClient();
         client.post(hashMap, new HttpResponseHandler() {
             @Override
             protected void onSuccess(int statusCode, JSONObject data) throws Exception {
                 if (data.getInt("code") == 0) {
-                    CheckUpModel info = gson.fromJson(data.get("info").toString(), CheckUpModel.class);
+                    info = gson.fromJson(data.toString(), CheckUpModel.class);
+                    //info.getInfo().setStatus("0"); //测试 0:强制更新 1:不强制
                     if ("2".equals(info.getInfo().getStatus())) {
                         MainActivity.launch(context);
                         return;
                     }
                     CheckUpdate.showUpdataDialog(SplashActivity.this, checkUpdateHandler, info);
-                }else {
+                } else {
                     MainActivity.launch(context);
                 }
             }

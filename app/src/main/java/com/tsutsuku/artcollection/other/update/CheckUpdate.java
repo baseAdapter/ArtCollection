@@ -12,6 +12,8 @@ import android.os.Message;
 import android.support.v4.content.FileProvider;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -35,16 +37,19 @@ public class CheckUpdate {
 
     public static void showUpdataDialog(final Activity context, final Handler handler, final CheckUpModel info) {
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_update, null);
-        final Dialog dialog = new Dialog(context);
+        final Dialog dialog = new Dialog(context, R.style.dialog);
         dialog.setContentView(view);
         TextView tv_version = (TextView) view.findViewById(R.id.tv_version);
-        TextView tv_content = (TextView) view.findViewById(R.id.tv_content);
+        WebView web = (WebView) view.findViewById(R.id.web);
         RelativeLayout rl_close = (RelativeLayout) view.findViewById(R.id.rl_close);
         ImageView btn_enter = (ImageView) view.findViewById(R.id.btn_enter);
         Button btn_update = (Button) view.findViewById(R.id.btn_update);
         dialog.setCancelable(false);
         tv_version.setText(info.getInfo().getTerminal_version());
-        tv_content.setText(info.getInfo().getContent());
+        WebSettings settings = web.getSettings();
+        settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        web.loadDataWithBaseURL("", info.getInfo().getContent(), "text/html","UTF-8", "");
+        // tv_content.setText(info.getInfo().getContent());
         if ("0".equals(info.getInfo().getStatus())) {
             rl_close.setVisibility(View.VISIBLE);
         } else if ("1".equals(info.getInfo().getStatus())) {
