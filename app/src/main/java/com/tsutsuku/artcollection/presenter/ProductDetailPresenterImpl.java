@@ -176,10 +176,10 @@ public class ProductDetailPresenterImpl implements ProductDetailContract.Present
 
         // url仅在微信（包括好友和朋友圈）中使用
         oks.setUrl(infoBean.getFarmCover());
-        oks.setTitleUrl("http://c.hiphotos.baidu.com/image/pic/item/d000baa1cd11728be518a314c2fcc3cec3fd2cca.jpg");//QQ
+        oks.setTitleUrl(infoBean.getFarmCover());//QQ
 
-        // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
-        oks.setImageUrl("http://c.hiphotos.baidu.com/image/pic/item/d000baa1cd11728be518a314c2fcc3cec3fd2cca.jpg");//确保SDcard下面存在此张图片
+//         imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+        oks.setImageUrl(infoBean.getFarmCover());//确保SDcard下面存在此张图片
 
         // 启动分享GUI
         oks.show(context);

@@ -80,10 +80,10 @@ public class InviteActivity extends BaseActivity {
 
                     // url仅在微信（包括好友和朋友圈）中使用
                     oks.setUrl(model.getList().getInvite_url() + model.getList().getInvite_code());
-                    oks.setTitleUrl(model.getList().getInvite_url());//QQ
+                    oks.setTitleUrl(model.getList().getInvite_url() + model.getList().getInvite_code());//QQ
 
                     // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
-                    oks.setImageUrl("http://c.hiphotos.baidu.com/image/pic/item/d000baa1cd11728be518a314c2fcc3cec3fd2cca.jpg");//确保SDcard下面存在此张图片
+                    oks.setImageUrl("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509445624236&di=b4e3ed00789dfb21a925a87715555317&imgtype=0&src=http%3A%2F%2Fimg.25pp.com%2Fuploadfile%2Fsoft%2Fimages%2F2015%2F0710%2F20150710054809607.jpg");//确保SDcard下面存在此张图片
 
                     // 启动分享GUI
                     oks.show(getApplicationContext());

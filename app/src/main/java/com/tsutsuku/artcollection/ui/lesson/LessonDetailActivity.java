@@ -101,7 +101,7 @@ public class LessonDetailActivity extends BaseAppCompatActivity implements Lesso
     public void initViews() {
 
         ButterKnife.bind(this);
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
         tlBase.setTabTextColors(getResources().getColor(R.color.d), getResources().getColor(R.color.orange));
 
         shadeTitle = new ShadeBlankTitle(context, new ShadeBlankTitle.BlankFunctionListener() {

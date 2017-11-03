@@ -41,5 +41,10 @@
         android:gravity="center"
         android:textColor="@color/black"
         android:textSize="16sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/view_gray"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

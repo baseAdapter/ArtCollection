@@ -43,6 +43,7 @@ import java.util.List;
  */
 
 public class ShoppingSettlePresenterImpl implements ShoppingSettleContract.Presenter {
+    public static final String TAG = ShoppingSettlePresenterImpl.class.getSimpleName();
 
     ShoppingSettleContract.View view;
     private List<ItemVendor> dataList;
@@ -97,7 +98,6 @@ public class ShoppingSettlePresenterImpl implements ShoppingSettleContract.Prese
                     }
 
                     balance = info.getString("cashBalance");
-
                     price = "0";
                     for (ItemVendor vendor : dataList) {
                         vendor.setInfoBean(GsonUtils.parseJson(info.getString(vendor.getFarmId()), ItemVendor.InfoBean.class));
@@ -170,7 +170,6 @@ public class ShoppingSettlePresenterImpl implements ShoppingSettleContract.Prese
                             .put("buyAmount", goods.getProductAmount()));
                 }
                 goodsObject.put("items", items);
-
                 goodsInfo.put(vendor.getFarmId(), goodsObject);
             }
 
@@ -255,7 +254,8 @@ public class ShoppingSettlePresenterImpl implements ShoppingSettleContract.Prese
                                 req.sign = tradeNojo.getString("sign");
                                 // genPayReq();
                                 api.sendReq(req);
-                            }
+                                Log.e(TAG, "onSuccess() returned: " + req);
+                        }
 
                             new WXRxBus() {
                                 @Override
@@ -280,11 +280,11 @@ public class ShoppingSettlePresenterImpl implements ShoppingSettleContract.Prese
                             };
                         }
                         break;
-                        case "balance": {
-                            SettleResultActivity.launch(context, address.getConsigneeName(), address.getAddress());
-                            view.dealFinish();
-                        }
-                        break;
+//                        case "balance": {
+//                            SettleResultActivity.launch(context, address.getConsigneeName(), address.getAddress());
+//                            view.dealFinish();
+//                        }
+//                        break;
                         default:
                             break;
                     }

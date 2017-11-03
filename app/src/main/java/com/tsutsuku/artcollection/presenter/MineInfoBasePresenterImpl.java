@@ -176,7 +176,7 @@ public class MineInfoBasePresenterImpl implements MineInfoBaseContract.Presenter
 
     private void setNickImpl(final String nick) {
         HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put("service", "User.setFarmName");
+        hashMap.put("service", "User.setNickname");
         hashMap.put("userId", SharedPref.getString(Constants.USER_ID));
         hashMap.put("nickname", nick);
         HttpsClient client = new HttpsClient();

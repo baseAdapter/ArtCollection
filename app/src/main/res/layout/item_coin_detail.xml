@@ -1,42 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="60dp">
-
-    <TextView
-        android:id="@+id/detail_wayTv"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="15dp"
-        android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="15dp">
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14dp"
-        android:textColor="@color/c"/>
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/ll_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/detail_numberTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        android:gravity="center_vertical"
-        android:textSize="16dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="11dp" />
+            <TextView
+                android:id="@+id/detail_wayTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:textColor="@color/c"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/detail_timeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="11dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="12dp"
+                android:textSize="12sp"
+                android:textColor="@color/c"/>
 
-    <TextView
-        android:id="@+id/detail_timeTv"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/detail_wayTv"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginBottom="10dp"
-        android:textSize="34px"
-        android:textColor="@color/c"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/detail_numberTv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/orange"
+            android:textSize="16sp" />
+    </LinearLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:layout_alignParentBottom="true"
-        android:background="@color/black" />
+        android:layout_height="1dp"
+        android:background="@color/view_gray"
+        ></View>
 
-</RelativeLayout>
+
+</LinearLayout>

@@ -9,123 +9,136 @@
     android:background="@color/bg_all">
     <include layout="@layout/base_title"/>
 
-    <ImageView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/banner"/>
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/img_redpacket_red"
-            android:id="@+id/frameLayout"
-            android:layout_marginTop="20dp">
-            <TextView
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/banner"/>
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/invite_code"
-                android:layout_marginLeft="9dp"
-                android:layout_marginTop="48dp"
-                android:layout_marginRight="104dp"
-                android:layout_marginBottom="42dp"
-                android:textSize="30px"
-                android:textColor="@color/tv_bg"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/invite_code_default"
                 android:layout_gravity="center"
-                android:layout_marginTop="35dp"
+                android:background="@drawable/img_redpacket_red"
+                android:id="@+id/frameLayout"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/invite_code"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginRight="104dp"
+                    android:layout_marginBottom="42dp"
+                    android:textSize="30px"
+                    android:textColor="@color/tv_bg"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/invite_code_default"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="35dp"
+                    android:textColor="@color/tv_bg"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="40px"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp">
+                <TextView
+                    android:id="@+id/tv_invite_success"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/invite_success"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="42dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/orange"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/personNum"
+                    android:text="0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/invite_man"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="8dp"
+                    android:textSize="14sp"
+                    android:id="@+id/textView3" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/invite_rewards"
+                    android:textSize="14sp"
+                    android:id="@+id/textView4"
+                    android:layout_marginLeft="60dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/orange"
+                    android:text="0"
+                    android:id="@+id/coinNum" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/invite_coins"
+                    android:layout_alignTop="@+id/textView4"
+                    android:layout_toRightOf="@+id/coinNum"
+                    android:layout_toEndOf="@+id/coinNum"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginStart="7dp"
+                    android:textSize="14sp"
+                    android:id="@+id/textView6" />
+
+            </LinearLayout>
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/button_invite"
+                android:text="@string/invite_immediately"
+                android:layout_gravity="center_horizontal"
                 android:textColor="@color/tv_bg"
-                android:layout_marginBottom="10dp"
-                android:textSize="40px"/>
-        </FrameLayout>
+                android:id="@+id/inviteBt"
+                android:textSize="17sp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp">
-        <TextView
-            android:id="@+id/tv_invite_success"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/invite_success"
-            android:textSize="14sp"
-            android:layout_marginLeft="42dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/orange"
-            android:textSize="20sp"
-            android:layout_marginLeft="5dp"
-            android:id="@+id/personNum"
-            android:text="10"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/invite_man"
-            android:layout_marginLeft="5dp"
-            android:layout_marginStart="8dp"
-            android:textSize="14sp"
-            android:id="@+id/textView3" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12sp"
+                android:background="@drawable/button_activitydetails"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/tv_activity_detail"/>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/invite_rewards"
-            android:textSize="14sp"
-            android:id="@+id/textView4"
-            android:layout_marginLeft="60dp"/>
+        </LinearLayout>
+    </ScrollView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_marginLeft="5dp"
-            android:textColor="@color/orange"
-            android:text="50"
-            android:id="@+id/coinNum" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/invite_coins"
-            android:layout_alignTop="@+id/textView4"
-            android:layout_toRightOf="@+id/coinNum"
-            android:layout_toEndOf="@+id/coinNum"
-            android:layout_marginLeft="7dp"
-            android:layout_marginStart="7dp"
-            android:textSize="14sp"
-            android:id="@+id/textView6" />
-
-    </LinearLayout>
-
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/button_invite"
-        android:text="@string/invite_immediately"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/tv_bg"
-        android:id="@+id/inviteBt"
-        android:textSize="17sp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12sp"
-        android:background="@drawable/button_activitydetails"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/tv_activity_detail"/>
 
 
 
